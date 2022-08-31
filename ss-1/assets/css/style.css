@@ -1,0 +1,186 @@
+/* 全体 */
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* header */
+.header-logo {
+  padding: 0.5rem 0;
+  font-family: 'Anton', sans-serif;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* main */
+section {
+  width: 100%;
+  /* 大枠で『上下』の『空き』を指定。 */
+  padding: 40px 0;
+}
+
+section:nth-of-type(1) {
+  background-color: #343132;
+}
+
+section:nth-of-type(2) {
+  background-color: #E68E38;
+}
+
+section:nth-of-type(3) {
+  background-color: #AF5548;
+}
+
+.st-inner {
+  /* 中枠で『左右』の『大きさ』を指定。 */
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* 文法 */
+h1, h2, p, li, dt, dd, label {
+  color: whitesmoke;
+}
+
+p {
+}
+
+h1, h2 {
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 1.5rem;
+  
+}
+h2 {
+  font-size: 1.25rem;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.2rem;
+}
+
+img {
+  /* imgタグのデフォルトの特性inlineをblockに変更する。 */
+  display: block;
+  max-width: 100%;
+}
+
+.main-visual img {
+  position: relative;
+}
+
+.catch-copy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-weight: 900;
+  font-size: 2rem;
+  color: whitesmoke;
+  text-shadow: 
+  1px 2px 10px #343132,
+  1px 2px 10px #343132,
+  1px 2px 10px #343132,
+  1px 2px 10px #343132,
+  1px 2px 10px #343132,
+  1px 2px 10px #343132;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+table {
+  /* 親要素『.st-inner』に対しての比率 */
+  width: 80%;
+  margin: 0 auto;
+  /* collapse = 崩壊 */
+  border-collapse: collapse; 
+  border-spacing: 0;
+  background-color: whitesmoke;
+}
+
+th, td {
+  padding: 0.7rem;
+  border: 1px solid rgb(226, 196, 156);
+}
+
+th {
+  color: whitesmoke;
+  background-color: #8a4907;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+form dt {
+  margin-bottom: 0.7rem;
+}
+
+form dd {
+  margin: 0 0 40px 0;
+}
+
+form dt::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  content: "\f030";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  margin-right: 0.5rem;
+}
+
+input {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-size: 1.1em;
+}
+
+input[type = "radio"] {
+  width: 1em;
+  margin: 0 0.2rem 0 1rem;
+
+}
+
+button[type = "submit"] {
+  padding: 5px 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  color: whitesmoke;
+  background-color: #f94733;
+  /* border: 1px solid rgb(92, 2, 2); */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px #653505;
+}
+
+footer {
+  padding: 1rem 0 1rem;
+  background-color: #343132;
+}
+
+address {
+  text-align: center;
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  color: whitesmoke;
+}
+
+address span {
+  font-size: 1.1rem;
+  letter-spacing: 0.25rem;
+}
