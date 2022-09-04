@@ -1,5 +1,6 @@
 <?php
-require_once('../../tmp/conf.php');
+require_once('/home/quad9/tmp/conf-ss-1.php');
+// require_once('../../../tmp/conf-ss-1.php');
 
 function hello($name) {
   return $name . "さん、こんにちは！";
