@@ -10,6 +10,7 @@
 require_once('./lib/function.php');
 
 hello("takahiro");
+hello("nobuyuki");
 
 // // セッション開始
 // session_start();
