@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* 全体 */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+main {
+  padding: 10px;
+}
+
+/* header */
+h1 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+h1 img {
+}
+h2 img {
+  height: 3rem;
+}
+
+h2, h3 {
+  margin: 10px 0 10px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.feature-img {
+  margin-top: 1rem;
+}
+
+
+footer {
+  padding: 1rem 0 1rem;
+  background-color: #343132;
+}
+
+address {
+  text-align: center;
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  color: whitesmoke;
+}
+
+address span {
+  font-size: 1.1rem;
+  letter-spacing: 0.25rem;
+}
