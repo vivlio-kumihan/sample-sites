@@ -7,7 +7,9 @@
 // $token = bin2hex(random_bytes(32));
 
 // require_once('../../tmp/conf.php');
-// require_once('./lib/function.php');
+require_once('./lib/function.php');
+
+hello("takahiro");
 
 // // セッション開始
 // session_start();
