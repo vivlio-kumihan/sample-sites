@@ -6,11 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <meta name="discription" content="MdNコーポレーションの書籍「初心者からちゃんとしたプロになる Webデザイン基礎入門」の紹介をするホームページです。">
+  <title>SS-2 responsive</title>
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/fonts.css" />
   <link rel="stylesheet" href="./assets/css/ss-2-style.css" />
-  <title>SS-2 responsive</title>
+  <style>
+    .book-more a::after {
+      font-family: "Font Awesome 5 Free";
+      margin-left: 0.5rem;
+      content: "\f2f5";
+      display: inline-block;
+      font-style: normal;
+      font-weight: 900;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+    .footer-info a::after {
+      font-family: "Font Awesome 5 Free";
+      margin-left: 0.5rem;
+      content: "\f081";
+      display: inline-block;
+      font-style: normal;
+      font-weight: 900;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+    .footer-info a::after {
+      font-family: "Font Awesome 5 Free";
+      margin-left: 0.5rem;
+      content: "\f082";
+      display: inline-block;
+      font-style: normal;
+      font-weight: 900;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -28,7 +63,7 @@
           <img src="./assets/img/feature_01.png" alt="">
         </p>
         <h3>
-          「自分のペースで勉強しやすい！」
+          「自分のペースで勉強しやすい!」
         </h3>
         <p class="feature-text">
           本書では、各記事ごとに15分、30分、60分・・・など、学習時間の目安を設けています。ちょっとした空き時間に少しずつ勉強したり、難しめのパートは集中して取り組んだり、自分のペースで学習していくことができます。
@@ -38,7 +73,7 @@
           <img src="./assets/img/feature_02.png" alt="">
         </p>
         <h3>
-          「技術と理論の両方を習得できる！」
+          「技術と理論の両方を習得できる!」
         </h3>
         <p class="feature-text">
           1冊の中で、手を動かして作ってみるパート（実践）と、読んで基本知識を身につけるパート（理論）の両方を交えています。HTMLやCSSの書き方・使い方はもちろん、「なぜ、必要なのか」「どうして、そう書くのか」も習得できます。
@@ -70,17 +105,16 @@
         <img src="./assets/img/heading_03.svg" alt="本書の著者">
       </h2>
       <dl>
-        <dt></dt>
-        <dd>栗谷 幸助</dd>
-        <dt>「人と人とを繋ぐ道具」としてのWebの魅力に触れ、1990年代後半にWeb業界へ。現在は、デジタルハリウッド大学・准教授として教育・研究活動を行う。Lesson1・2を執筆。</dt>
-        <dd>おの れいこ</dd>
-        <dt>Webやグラフィック制作を中心に個人やチームで活動中。その他、勉強会やイベント企画・運営等、人と人をつなげる活動も行なっている。Lesson4・5を執筆。</dt>
-        <dd>藤本 勝己</dd>
-        <dt>企業の人材育成や広島県から依頼を受けた人材集積の事業も行い、ゼロからのコミュニティ作りなど、さまざまなな事業の形成・発展につなげている。Lesson6〜9を執筆。</dt>
-        <dd>村上 圭</dd>
-        <dt>株式会社インターロジックに入社。Web制作のディレクション、HTML/CSSのマークアップのほか、社内外での制作研修を定期的に行う。Lesson3を執筆。</dt>
-        <dd>吉本 孝一</dd>
-        <dt>株式会社織に入社。同社を退社した後、フリーランスとして独立、広島を中心にフロントエンドエンジニアとして活動中。Lesson6・7のサンプルを制作。</dt>
+        <dt>栗谷 幸助</dt>
+        <dd>「人と人とを繋ぐ道具」としてのWebの魅力に触れ、1990年代後半にWeb業界へ。現在は、デジタルハリウッド大学・准教授として教育・研究活動を行う。Lesson1・2を執筆。</dd>
+        <dt>おの れいこ</dt>
+        <dd>Webやグラフィック制作を中心に個人やチームで活動中。その他、勉強会やイベント企画・運営等、人と人をつなげる活動も行なっている。Lesson4・5を執筆。</dd>
+        <dt>藤本 勝己</dt>
+        <dd>企業の人材育成や広島県から依頼を受けた人材集積の事業も行い、ゼロからのコミュニティ作りなど、さまざまなな事業の形成・発展につなげている。Lesson6〜9を執筆。</dd>
+        <dt>村上 圭</dt>
+        <dd>株式会社インターロジックに入社。Web制作のディレクション、HTML/CSSのマークアップのほか、社内外での制作研修を定期的に行う。Lesson3を執筆。</dd>
+        <dt>吉本 孝一</dt>
+        <dd>株式会社織に入社。同社を退社した後、フリーランスとして独立、広島を中心にフロントエンドエンジニアとして活動中。Lesson6・7のサンプルを制作。</dd>
       </dl>
     </section>    
   </main>
@@ -99,8 +133,8 @@
     </div>
     <div class="footer-info">
       <ul>
-        <li><a href="ttps://www.facebook.com/mdnjp/"></a>Facebook</li>
-        <li><a href="https://twitter.com/MdN_WebBook/"></a>Twitter</li>
+        <li><a href="ttps://www.facebook.com/mdnjp/"></a></li>
+        <li><a href="https://twitter.com/MdN_WebBook/"></a></li>
       </ul>
       <p class="copy-right">
         <small>
