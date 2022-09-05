@@ -1,11 +1,39 @@
 @charset "utf-8";
 /* 全体 */
+html {
+  font-size: 15px;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 15.5px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  width: 296px;
+  margin: 0 auto;
+}
+
+.sct-inner {
+  padding: 20px 10px;
+}
+
+h2.one {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+h2.two {
+  font-size: 16.5px;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
 }
 
 /* header */
@@ -17,11 +45,11 @@
 }
 
 /* main */
-section {
+/* 大枠で『上下』の『空き』を指定。 */
+/* section {
   width: 100%;
-  /* 大枠で『上下』の『空き』を指定。 */
   padding: 40px 0;
-}
+} */
 
 section:nth-of-type(1) {
   background-color: #343132;
@@ -35,12 +63,6 @@ section:nth-of-type(3) {
   background-color: #AF5548;
 }
 
-.st-inner {
-  /* 中枠で『左右』の『大きさ』を指定。 */
-  width: 70%;
-  margin: 0 auto;
-}
-
 /* 文法 */
 h1, h2, p, li, dt, dd, label {
   color: whitesmoke;
@@ -49,20 +71,20 @@ h1, h2, p, li, dt, dd, label {
 p {
 }
 
-h1, h2 {
+/* h1, h2 {
   font-weight: 900;
   line-height: 1.15;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: 1.5rem;
-  
-}
-h2 {
+} */
+
+/* h2 {
   font-size: 1.25rem;
   border-bottom: 1px solid #fff;
   padding-bottom: 0.2rem;
-}
+} */
 
 img {
   /* imgタグのデフォルトの特性inlineをblockに変更する。 */
