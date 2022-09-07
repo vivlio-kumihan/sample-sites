@@ -19,34 +19,35 @@
 </head>
 <body class="home">
   <div class="container">
-    <nav>
-      <input type="checkbox" id="nav-input" class="nav-hidden">
-      <label id="nav-btn" for="nav-input">
-        <div class="openbtn1">
-          <span></span><span></span><span></span>
+    <header>
+      <!-- チェックボックスの実装。これは隠す。 -->
+      <!-- 3本線のハンバーガーメニューボタンの元になるspanを敷設する。 -->
+      <!-- 『id』『for』の関係で繋がっている。
+            spanの3本線をクリックしたらチェックが入る
+            仕組みをここで敷設する。 -->
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <label for="menu-btn-check" id="nav-black"></label>
+        <div class="menu-content">
+          <ul>
+            <li><a href="https://wweb.dev/resources/css-separator-generator/">separator</a></li>
+            <li><a href="https://flexbox.buildwithreact.com/">flexbox</a></li>
+            <li><a href="https://shadows.brumm.af/">shadow</a></li>
+            <li><a href="https://neumorphism.io/#e0e0e0">embossment</a></li>
+            <li><a href="https://css.glass/">glass</a></li>
+            <li><a href="https://mycolor.space/gradient3">gradient</a></li>
+            <li><a href="https://bennettfeely.com/clippy/">clip-path</a></li>
+            <li><a href="https://css-generator.netlify.app/">generator</a></li>
+            <li><a href="https://coco-factory.jp/ugokuweb/">ugokuweb</a></li>
+          </ul>
         </div>
-      </label>
-      <label id="nav-black" for="nav-input"></label>
-      <div id="nav-content">
-        <ul class="nav-list">
-          <li><a href="https://wweb.dev/resources/css-separator-generator/">separator</a></li>
-          <li><a href="https://flexbox.buildwithreact.com/">flexbox</a></li>
-          <li><a href="https://shadows.brumm.af/">shadow</a></li>
-          <li><a href="https://neumorphism.io/#e0e0e0">embossment</a></li>
-          <li><a href="https://css.glass/">glass</a></li>
-          <li><a href="https://mycolor.space/gradient3">gradient</a></li>
-          <li><a href="https://bennettfeely.com/clippy/">clip-path</a></li>
-          <li><a href="https://css-generator.netlify.app/">generator</a></li>
-          <li><a href="https://coco-factory.jp/ugokuweb/">ugokuweb</a></li>
-        </ul>
       </div>
-    </nav>
+    </header>
     <main>
       <p class="greeting">ハローワールド！</p>
     </main>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="./assets/js/behavior.js"></script>
+  <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>
 </html>
