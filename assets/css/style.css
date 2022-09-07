@@ -7,6 +7,7 @@ html {
 main {
   position: relative;
 }
+
 p {
   position: absolute;
   top: 50%;
@@ -17,4 +18,72 @@ p {
   text-align: center;
   font-size: 5rem;
   font-family: 'Potta One', cursive;
+}
+
+#nav-content {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  z-index: 100;
+  width: 100%;
+  max-width: 240px;
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+ul.nav-list {
+  background: #1b9aaa;
+  padding: 0;
+  height: 100vh;
+  text-align: center;
+}
+
+ul.nav-list li {
+  display: block;
+}
+
+ul.nav-list li a {
+  display: block;
+  padding: 1.5em;
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.nav-hidden {
+  display: none;
+}
+
+#nav-btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+  background: #1b9aaa url(../img/gnav-btn-open.png) center center no-repeat;
+}
+
+#nav-black {
+  display: none;
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#nav-input:checked ~ #nav-btn {
+  background: #1b9aaa url(../img/gnav-btn-close.png) center center no-repeat;
+}
+
+#nav-input:checked ~ #nav-black {
+  display: block;
+}
+
+#nav-input:checked ~ #nav-content {
+  left: 0;
 }
