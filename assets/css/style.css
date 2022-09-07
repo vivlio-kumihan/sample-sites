@@ -9,11 +9,8 @@ body.home {
   height: 100vh;
 }
 
-main {
-  position: relative;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+.container {
+  padding: 2rem;
 }
 
 p {
@@ -66,6 +63,7 @@ ul.nav-list li a {
   display: none;
 }
 
+/* 
 #nav-btn {
   display: block;
   width: 30px;
@@ -75,7 +73,11 @@ ul.nav-list li a {
   right: 15px;
   z-index: 100;
   background: #7e6312 url(../img/gnav-btn-open.png) center center no-repeat;
-}
+} */
+
+/* #nav-input:checked ~ #nav-btn {
+  background: #7e6312 url(../img/gnav-btn-close.png) center center no-repeat;
+} */
 
 #nav-black {
   display: none;
@@ -88,10 +90,6 @@ ul.nav-list li a {
   background: rgba(0, 0, 0, 0.5);
 }
 
-#nav-input:checked ~ #nav-btn {
-  background: #7e6312 url(../img/gnav-btn-close.png) center center no-repeat;
-}
-
 #nav-input:checked ~ #nav-black {
   display: block;
 }
@@ -101,3 +99,66 @@ ul.nav-list li a {
 }
 
 /**************** ハンバーガーメニュー ここまで ****************/
+
+
+/*==================================================
+　5-2-1 3本線が×に
+===================================*/
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.btn {
+  width: 100%;
+  text-align: right;
+}
+.openbtn1 {
+  /* position: relative; */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  /*ボタン内側の基点となるためrelativeを指定*/
+  background: #c84617;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+}
+
+/*ボタン内側*/
+.openbtn1 span {
+  display: inline-block;
+  transition: all .4s;
+  /*アニメーションの設定*/
+  position: absolute;
+  left: 7px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  width: 70%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+  top: 8px;
+}
+.openbtn1 span:nth-of-type(2) {
+  top: 18.5px;
+}
+.openbtn1 span:nth-of-type(3) {
+  top: 29px;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+.openbtn1.active span:nth-of-type(1) {
+  top: 12px;
+  left: 7px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 70%;
+}
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0;
+  /*真ん中の線は透過*/
+}
+.openbtn1.active span:nth-of-type(3) {
+  top: 24px;
+  left: 7px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 70%;
+}
