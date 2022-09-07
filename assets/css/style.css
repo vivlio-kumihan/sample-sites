@@ -4,11 +4,20 @@ html {
   font-size: 16px;
 }
 
+body.home {
+  background: url(../img/banner.jpg) no-repeat center center / cover;
+  height: 100vh;
+}
+
 main {
   position: relative;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 p {
+  width: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -16,9 +25,12 @@ p {
   transform: translate(-50%, -50%);
 
   text-align: center;
-  font-size: 5rem;
+  font-size: 3rem;
   font-family: 'Potta One', cursive;
+  color: #fff;
 }
+
+/**************** ハンバーガーメニュー ****************/
 
 #nav-content {
   position: fixed;
@@ -32,7 +44,7 @@ p {
 }
 
 ul.nav-list {
-  background: #1b9aaa;
+  background: #7e6312;
   padding: 0;
   height: 100vh;
   text-align: center;
@@ -62,7 +74,7 @@ ul.nav-list li a {
   top: 15px;
   right: 15px;
   z-index: 100;
-  background: #1b9aaa url(../img/gnav-btn-open.png) center center no-repeat;
+  background: #7e6312 url(../img/gnav-btn-open.png) center center no-repeat;
 }
 
 #nav-black {
@@ -77,7 +89,7 @@ ul.nav-list li a {
 }
 
 #nav-input:checked ~ #nav-btn {
-  background: #1b9aaa url(../img/gnav-btn-close.png) center center no-repeat;
+  background: #7e6312 url(../img/gnav-btn-close.png) center center no-repeat;
 }
 
 #nav-input:checked ~ #nav-black {
@@ -87,3 +99,5 @@ ul.nav-list li a {
 #nav-input:checked ~ #nav-content {
   left: 0;
 }
+
+/**************** ハンバーガーメニュー ここまで ****************/
