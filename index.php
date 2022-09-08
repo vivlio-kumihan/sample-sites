@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utilities</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
   <meta name="discription" content="MdNコーポレーションの書籍「初心者からちゃんとしたプロになる Webデザイン基礎入門」の紹介をするホームページです。">
-  <title>SS-2 responsive</title>
+  <title>Utilities</title>
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/fonts.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-
+  <link rel="stylesheet" href="./assets/css/ss-style.css" />
 </head>
+
 <body class="home">
   <div class="container">
     <header>
@@ -40,14 +36,17 @@
             <li><a href="https://bennettfeely.com/clippy/">clip-path</a></li>
             <li><a href="https://css-generator.netlify.app/">generator</a></li>
             <li><a href="https://coco-factory.jp/ugokuweb/">ugokuweb</a></li>
+            <li><a href="https://www.color-hex.com/">color</a></li>
+            <li><a href="https://sounansa.net/archives/647">login UI</a></li>
           </ul>
         </div>
       </div>
     </header>
     <main>
-      <p class="greeting">ハローワールド！</p>
+      <p class="greeting">kumihan.com</p>
     </main>
   </div>
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
