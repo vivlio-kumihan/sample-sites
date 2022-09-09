@@ -155,7 +155,7 @@ p.greeting {
   z-index: 50;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 380px;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -196,13 +196,19 @@ body#entrance {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.entrance-form-wrapper form {
+.entrance-form-wrapper {
   padding: 0 1.5em;
 }
 
 .form-item {
   margin-bottom: 0.75em;
   width: 100%;
+}
+
+#full-name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .form-item input {
@@ -232,6 +238,7 @@ body#entrance {
   border: none;
   color: #fff;
   cursor: pointer;
+  width: 100%;
   height: 50px;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2em;
@@ -239,7 +246,7 @@ body#entrance {
   text-align: center;
   text-transform: uppercase;
   transition: background 0.3s ease-in-out;
-  width: 100%;
+  border-radius: 0.5rem;
 }
 
 .button:hover {
@@ -262,3 +269,19 @@ body#entrance {
   border-bottom: 1px dotted #8c8c8c;
 }
 /**************** ログイン ここまで ****************/
+
+.alert {
+  max-width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 0.5rem;
+  color: #941640;
+  background-color: #e72b4156;
+  border-radius: 0.5rem;
+  box-shadow:
+    1.7px 1.2px 2.2px rgba(0, 0, 0, 0.031),
+    4px 2.9px 5.3px rgba(0, 0, 0, 0.044),
+    7.5px 5.5px 10px rgba(0, 0, 0, 0.055),
+    13.4px 9.8px 17.9px rgba(0, 0, 0, 0.066),
+    25.1px 18.4px 33.4px rgba(0, 0, 0, 0.079),
+    60px 44px 80px rgba(0, 0, 0, 0.11);
+}

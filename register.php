@@ -5,7 +5,8 @@ require_once('./lib/function.php');
 $err_mesg = array();
 
 if ($_POST) {
-  $name = get_post('name');
+  $last_name = get_post('last-name');
+  $first_name = get_post('first-name');
   $email = get_post('email');
   $password = get_post('password');
   $confirm_password = get_post('confirm_password');
@@ -13,25 +14,28 @@ if ($_POST) {
   $dbh = get_db_connect();
 
   // for name
-  if (!$name || mb_strlen($name) > 20) {
-    $err_mesg[] = 'お名前を入力してください。';
-  } elseif ($name) {
+  if (!$last_name || mb_strlen($last_name) > 10) {
+    $err_mesg[] = '苗字を入力してください。';
+  } elseif (!$first_name || mb_strlen($first_name) > 10) {
+    $err_mesg[] = '名前を入力してください。';
+  } elseif ($last_name && $first_name) {
     try {
-      $sql = "SELECT COUNT(id) FROM `sample-sites` WHERE `name` = :name";
+      $sql = "SELECT COUNT(id) FROM `sample-sites` WHERE `last_name` = :last_name AND `first_name` = :first_name";
       $stmt = $dbh->prepare($sql);
-      $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+      $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
+      $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
       $stmt->execute();
       $count = $stmt->fetch(PDO::FETCH_ASSOC);
-      
+
       if ($count['COUNT(id)'] > 0) {
-          $err_mesg[] = '記入されたお名前は既に登録されています。';
+        $err_mesg[] = '記入されたお名前は既に登録されています。';
       }
     } catch (PDOException $e) {
-      echo ("接続に失敗しました。" . $e->getMessage());
+      echo ("名前の接続でエラー発生" . $e->getMessage());
       die();
     }
   }
-  
+
   // for email
   if (!$email) {
     $err_mesg[] = 'Eメールアドレスを入力してください。';
@@ -46,12 +50,12 @@ if ($_POST) {
       $stmt->bindValue(':email', $email, PDO::PARAM_STR);
       $stmt->execute();
       $count = $stmt->fetch(PDO::FETCH_ASSOC);
-      
+
       if ($count['COUNT(id)'] > 0) {
-          $err_mesg[] = '記入されたEメールアドレスは既に登録されています。';
+        $err_mesg[] = '記入されたEメールアドレスは既に登録されています。';
       }
     } catch (PDOException $e) {
-      echo ("接続に失敗しました。" . $e->getMessage());
+      echo ("Eメールアドレスの接続でエラー発生" . $e->getMessage());
       die();
     }
   }
@@ -62,11 +66,11 @@ if ($_POST) {
   } elseif (mb_strlen($password) > 17) {
     $err_mesg[] = 'パスワードは16文字以内で入力してください。';
   }
-  
+
   // for confirm password
   if (!$confirm_password) {
     $err_mesg[] = '確認用のパスワードをにゅうりょくしてください。';
-  } elseif ($password !== $confirm_password ) {
+  } elseif ($password !== $confirm_password) {
     $err_mesg[] = '確認用に入力されたパスワードが一致しません。';
   }
 
@@ -76,9 +80,10 @@ if ($_POST) {
   if (!$err_mesg) {
     try {
       $date = date('Y-m-d H:i:s');
-      $sql = "INSERT INTO `sample-sites`(`name`, `email`, `password`, `created`) VALUES (:name, :email, :password, '$date')";
+      $sql = "INSERT INTO `sample-sites`(`last_name`, `first_name`, `email`, `password`, `created`) VALUES (:last_name, :first_name, :email, :password, '$date')";
       $stmt = $dbh->prepare($sql);
-      $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+      $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
+      $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
       $stmt->bindValue(':email', $email, PDO::PARAM_STR);
       $stmt->bindValue(':password', $password, PDO::PARAM_STR);
       $stmt->execute();
@@ -86,10 +91,19 @@ if ($_POST) {
       echo ("接続に失敗しました。" . $e->getMessage());
       die();
     }
+
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    header("location: //$host$uri/member.php");
+    exit;
   }
+} else {
+  $_POST = array();
+  $_POST['last-name'] = '';
+  $_POST['first-name'] = '';
+  $_POST['email'] = '';
+  $_SESSION = array();
 }
-
-
 ?>
 
 
@@ -109,22 +123,31 @@ if ($_POST) {
 
 <body id="entrance">
   <div class="entrance-form-wrapper">
+    <?php
+    if ($err_mesg) {
+      echo '<div class="alert">';
+      echo implode('<br>', $err_mesg);
+      echo '</div>';
+    }
+    ?>
     <h1>SIGN UP</h1>
     <form action="./register.php" method="POST">
-      <div class="form-item">
-        <label for="name"></label>
-        <input type="name" name="name" required="required" placeholder="お名前" value="<?php echo forxss($_POST['name']) ?>"></input>
+      <div id="full-name" class="form-item">
+        <!-- <label for="name-sei"></label> -->
+        <input type="name" name="last-name" placeholder="氏名（姓）" value="<?php echo forxss($_POST['last-name']) ?>"></input>
+        <!-- <label for="name-mei"></label> -->
+        <input type="name" name="first-name" placeholder="（名）" value="<?php echo forxss($_POST['first-name']) ?>"></input>
       </div>
       <div class="form-item">
-        <label for="email"></label>
+        <!-- <label for="email"></label> -->
         <input type="email" name="email" required="required" placeholder="Eメールアドレス" value="<?php echo forxss($_POST['email']) ?>"></input>
       </div>
       <div class="form-item">
-        <label for="password"></label>
+        <!-- <label for="password"></label> -->
         <input type="password" name="password" required="required" placeholder="パスワード"></input>
       </div>
       <div class="form-item">
-        <label for="confirm-password"></label>
+        <!-- <label for="confirm-password"></label> -->
         <input type="password" name="confirm_password" required="required" placeholder="パスワード（確認）"></input>
       </div>
       <div class="button-panel">
