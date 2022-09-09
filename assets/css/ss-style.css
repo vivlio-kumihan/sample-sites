@@ -181,6 +181,7 @@ body#entrance {
 
 /* Form Layout */
 .entrance-form-wrapper {
+  position: relative;
   background: #fafafa;
   margin: 3em auto;
   padding: 0 1em;
@@ -254,9 +255,13 @@ body#entrance {
 }
 
 .form-footer {
-  font-size: 1em;
+  font-size: 0.9rem;
   padding: 2em 0;
   text-align: center;
+}
+
+.form-footer p {
+    margin-bottom: 0.5rem;
 }
 
 .form-footer a {
@@ -271,12 +276,17 @@ body#entrance {
 /**************** ログイン ここまで ****************/
 
 .alert {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
   max-width: 100%;
-  margin-top: 2rem;
   padding: 1rem 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
   color: #941640;
-  background-color: #e72b4156;
+  background-color: rgb(255, 185, 185);
   border-radius: 0.5rem;
+  z-index: 100;
   box-shadow:
     1.7px 1.2px 2.2px rgba(0, 0, 0, 0.031),
     4px 2.9px 5.3px rgba(0, 0, 0, 0.044),
