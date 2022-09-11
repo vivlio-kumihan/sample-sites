@@ -41,7 +41,7 @@ if ($_POST) {
       $stmt->bindValue(':password', $hashed_tmp_pw, PDO::PARAM_STR);
       $stmt->execute();
       $complete = true;
-      $report_mesg[] = "パスワードを登録されているEメールアドレス宛に送信しました。";
+      $report_mesg[] = "新しいパスワードを登録されているEメールアドレス宛に送信しました。";
       // $host = $_SERVER['HTTP_HOST'];
       // $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
       // header("Location: //$host$uri/logout.php");
@@ -74,13 +74,14 @@ if ($_POST) {
 
 <body id="entrance"">
   <main class=" entrance-form-wrapper">
-  <?php
-  if ($err_mesg) {
-    echo '<div class="alert">';
-    echo implode('<br>', $err_mesg);
-    echo '</div>';
-  }
-  ?>
+  <?php if ($err_mesg) { ?>
+    <?php
+      echo '<div class="alert">';
+      echo implode('<br>', $err_mesg);
+      echo '</div>';
+    ?>
+  <?php } ?>
+
   <?php if ($complete) { ?>
     <?php
       echo '<div class="report_mesg">';
@@ -93,13 +94,14 @@ if ($_POST) {
     ?>
   <?php } else { ?>
     <h1>REISSUE OF PASSWORD</h1>
+    <h3>Eメールアドレス宛に<br>新しいパスワードを送信します。</h3>
     <form action="./forget_pw.php" method="POST">
       <div class="form-item">
         <!-- <label for="email"></label> -->
         <input type="email" name="email" placeholder="Eメールアドレス"></input>
       </div>
       <div class="button-panel">
-        <input type="submit" class="button" value="Send"></input>
+        <input type="submit" class="button" value="送信"></input>
       </div>
     </form>
     <div class="form-footer">

@@ -10,45 +10,45 @@ if ($_POST) {
   $email = get_post('email');
   $password = get_post('password');
 
-  $dbh = get_db_connect();
-
+  
   // for email
   if (!$email || mb_strlen($email) > 100) {
-    $err_mesg[] = 'Eメールアドレスを確ししてください。';
+    $err_mesg[] = 'Eメールアドレスを確認してください。';
   } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $err_mesg[] = '入力されたEメールアドレスは不正です。';
-  } elseif ($email) {
-    try {
-      $sql = "SELECT * FROM `sample-sites` WHERE `email` = :email LIMIT 1";
-      $stmt = $dbh->prepare($sql);
-      $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-      $stmt->execute();
-      if ($stmt->rowCount() > 0) {
-        $profile = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (password_verify($password, $profile['password'])) {
-          $_SESSION['email'] = $email;
-          $host = $_SERVER['HTTP_HOST'];
-          $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-          header("Location: //$host$uri/member.php");
-          exit;
-        } else {
-          $err_mesg[] = "入力された情報が間違っています。再入力をしてください。";
-        }
-      } else {
-        $err_mesg[] = "入力された情報が間違っています。再入力をしてください。";
-      }
-    } catch (PDOException $e) {
-      echo ('接続に失敗しました。' . $e->getMessage());
-      die();
-    }
-  } else {
-    if (isset($_SESSION['email']) && $_SESSION['email']) {
-      $host = $_SERVER['HTTP_HOST'];
-      $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-      header("location: //$host$uri/index.php");
-      exit;
-    }
   }
+  
+  // for password
+  if (!$password || mb_strlen($password) > 17) {
+    $err_mesg[] = 'パスワードを入力してください。';
+  }
+
+  $dbh = get_db_connect();
+
+  try {
+    $sql = "SELECT * FROM `sample-sites` WHERE `email` = :email LIMIT 1";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+    if ($stmt->rowCount() > 0) {
+      $profile = $stmt->fetch(PDO::FETCH_ASSOC);
+      if (password_verify($password, $profile['password'])) {
+        $_SESSION['email'] = $email;
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        header("Location: //$host$uri/member.php");
+        exit;
+      } else {
+        $err_mesg[] = "登録されたパスワードを入力してください。";
+      }
+    } else {
+      $err_mesg[] = "入力されたアドレスで登録はありません。再入力をしてください。";
+    }
+  } catch (PDOException $e) {
+    echo ('接続に失敗しました。' . $e->getMessage());
+    die();
+  }
+} else {
   $_POST = array();
   $_POST['email'] = '';
 }
@@ -70,33 +70,34 @@ if ($_POST) {
 </head>
 
 <body id="entrance">
-  <div class="entrance-form-wrapper">
+  <main class="entrance-form-wrapper">
+  <?php if ($err_mesg) { ?>
     <?php
-    if ($err_mesg) {
-      echo '<div class="alert">';
-      echo implode('<br>', $err_mesg);
-      echo '</div>';
-    }
+    echo '<div class="alert">';
+    echo implode('<br>', $err_mesg);
+    echo '</div>';
     ?>
-    <h1>SIGN IN</h1>
-    <form action="./login.php" method="POST">
-      <div class="form-item">
-        <label for="email"></label>
-        <input type="email" name="email" placeholder="Eメールアドレス"></input>
-      </div>
-      <div class="form-item">
-        <label for="password"></label>
-        <input type="password" name="password" placeholder="パスワード"></input>
-      </div>
-      <div class="button-panel">
-        <input type="submit" class="button" value="Sign In"></input>
-      </div>
-    </form>
-    <div class="form-footer">
-      <p><a href="./register.php">メンバー登録はこちらから</a></p>
-      <p><a href="./forgot_pw.php">パスワードを忘れた方はこちらから</a></p>
+  <?php } ?>
+  
+  <h1>log in</h1>
+  <form action="./login.php" method="POST">
+    <div class="form-item">
+      <!-- <label for="email"></label> -->
+      <input type="email" name="email" placeholder="Eメールアドレス" value="<?php echo forxss($_POST['email']) ?>"></input>
     </div>
+    <div class="form-item">
+      <!-- <label for="password"></label> -->
+      <input type="password" name="password" placeholder="パスワード"></input>
+    </div>
+    <div class="button-panel">
+      <input type="submit" class="button" value="ログイン"></input>
+    </div>
+  </form>
+  <div class="form-footer">
+    <p><a href="./register.php">メンバー登録はこちらから<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+    <p><a href="./forget_pw.php">パスワードを忘れた方はこちらから<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
   </div>
+  </main>
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>
 

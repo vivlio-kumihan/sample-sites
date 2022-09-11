@@ -130,7 +130,7 @@ if ($_POST) {
       echo '</div>';
     }
     ?>
-    <h1>SIGN UP</h1>
+    <h1>sign up</h1>
     <form action="./register.php" method="POST">
       <div id="full-name" class="form-item">
         <!-- <label for="name-sei"></label> -->
@@ -151,11 +151,11 @@ if ($_POST) {
         <input type="password" name="confirm_password" required="required" placeholder="パスワード（確認）"></input>
       </div>
       <div class="button-panel">
-        <input type="submit" class="button" title="Sign Up" value="Sign Up"></input>
+        <input type="submit" class="button" title="Sign Up" value="メンバー登録"></input>
       </div>
     </form>
     <div class="form-footer">
-      <p><a href="./index.php">Back to HOME</a></p>
+      <p><a href="./index.php">Back to HOME<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
     </div>
   </div>
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
