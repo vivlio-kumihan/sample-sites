@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -27,6 +30,11 @@
         <label for="menu-btn-check" id="nav-black"></label>
         <div class="menu-content">
           <ul>
+            <li><a href="./register.php">sign up</a></li>
+            <li><a href="./login.php">log in</a></li>
+            <li><a href="./contact.php">contact</a></li>
+            <li><a href="./change_pw.php">change password</a></li>
+            <li><a href="./forget_pw.php">reissue password</a></li>
             <li><a href="https://wweb.dev/resources/css-separator-generator/">separator</a></li>
             <li><a href="https://flexbox.buildwithreact.com/">flexbox</a></li>
             <li><a href="https://shadows.brumm.af/">shadow</a></li>

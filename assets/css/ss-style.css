@@ -199,7 +199,7 @@ body#entrance {
   font-size: 1.5rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.5);
+  color: #777;
 }
 
 .entrance-form-wrapper h3 {
@@ -385,6 +385,6 @@ body#entrance {
 
 .report_mesg a {
   font-weight: 700;
-  color: #262626;
+  color: #555;
   text-decoration: none;
 }
