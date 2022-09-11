@@ -4,6 +4,10 @@ html {
   font-size: 16px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body.home {
   background: url(../img/banner.jpg) no-repeat center center / cover;
   height: 100vh;
@@ -209,6 +213,14 @@ body#entrance {
   font-size: 1rem;
   line-height: 1.5;
 }
+.entrance-form-wrapper .complete {
+  text-align: center;
+}
+.entrance-form-wrapper .complete i {
+  margin-bottom: 0.5rem;
+  font-size: 5rem;
+  color: rgb(255, 185, 185);
+}
 
 .form-item {
   margin-bottom: 0.75em;
@@ -239,9 +251,9 @@ body#entrance {
 }
 
 .form-item textarea{
-  width: 100%;
+  max-width: 100%;
   margin-top: 1rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem;
   font-size: 1.05rem;
   border: 1px solid #fd1933;
   border-radius: 0.5rem;
@@ -268,9 +280,10 @@ body#entrance {
   margin: 0 0.5rem;
 }
 
-.form-item p {
-  font-size: 1.07rem;
-  font-weight: 700;
+.form-item .contact-form-confirm-mesg {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .button-panel {

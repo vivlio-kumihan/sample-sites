@@ -98,12 +98,12 @@ if (isset($_POST['back']) && $_POST['back']) {
     // フォーム入力画面へ差し戻す符をを発行する。
     $toward = 'input';
   } else {
-    $message_for_customer = "お問合せを受け付けました。\r\n\r\n"
+    $message_for_customer = "お問合せを受け付けました。\r\n担当者より連絡いたします。いましばらくお待ちください。\r\n\r\n"
       . "お名前: " . $full_name . "様\r\n"
       . "Eメールアドレス: " . $_SESSION['email'] . "\r\n"
       . "お問合せ内容:\r\n"
-      . preg_replace("/\r\n|\r|\n/", "\r\n"
-        . "担当者より連絡いたします。いましばらくお待ちください。", $_SESSION['mesg']);
+      . preg_replace("/\r\n|\r|\n/", "\r\n", $_SESSION['mesg']);
+
     $message_to_staff = "問合せを受け付けました。\r\n対応をお願いします。\r\n\r\n_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/\r\n\r\n"
       . "お名前: " . $full_name . "様\r\n"
       . "Eメールアドレス: " . $_SESSION['email'] . "\r\n"
@@ -158,11 +158,7 @@ if (isset($_POST['back']) && $_POST['back']) {
         </div>
         <div class="form-item">
           <!-- <label for="textarea"></label> -->
-          <textarea cols="40" rows="8" name="mesg" placeholder="お問い合せ内容">
-            <div class="contact-input-area">
-              <p><?php echo $_SESSION['mesg'] ?></p>
-            </div>
-          </textarea>
+          <textarea cols="40" rows="8" name="mesg" placeholder="お問い合せ内容"><?php echo $_SESSION['mesg'] ?></textarea>
         </div>
         <div class="button-panel">
           <input type="submit" class="button" name="confirm" value="確認"></input>
@@ -180,8 +176,7 @@ if (isset($_POST['back']) && $_POST['back']) {
           <!-- <input type="email" name="email" placeholder="Eメールアドレス" value=""></input> -->
         </div>
         <div class="form-item">
-          <label for="mesg" style="display: inline-block; margin-bottom: 0.5rem;">お問合せ内容</label>
-          <p><?php echo nl2br($_SESSION['mesg']) ?></p>
+          <label class="contact-form-confirm-mesg" for="mesg">お問合せ内容<br><?php echo nl2br($_SESSION['mesg']) ?></label>
         </div>
         <div class="button-panel">
           <input type="submit" class="button" name="back" value="戻る"></input>
@@ -189,7 +184,10 @@ if (isset($_POST['back']) && $_POST['back']) {
         </div>
       </form>
     <?php } else { ?>
-      <p>お問合せを受け付けました。担当から連絡をいたします。今しばらくおまちください。</p>
+      <div class="complete">
+        <i class="fa-regular fa-paper-plane"></i>
+        <p>お問合せありがとうございました。<br>確認のメールを送付しております。<br>担当から連絡を差し上げますので、今しばらくおまちください。</p>
+      </div>
     <?php } ?>
     <div class="form-footer">
       <p><a href="./index.php">Back to HOME<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
