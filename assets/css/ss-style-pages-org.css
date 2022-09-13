@@ -35,14 +35,16 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  width: 100%;
   
 }
 
-.slogan h2, .slogan p {
+.slogan h2, .slogan h3, .slogan p {
   text-align: center;
   font-family: 'Anton', sans-serif;
   font-size: 2em;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.5rem;
   text-transform: uppercase;
   color: whitesmoke;
   text-shadow:
@@ -54,9 +56,26 @@ body {
   20px 30px 80px rgba(0, 0, 0, 1);
 }
 
+.slogan h3 {
+  margin: 0.75rem 0rem 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 0.25rem;
+}
+
 .slogan p {
-  font-size: 1.25rem;
-  text-transform: capitalize;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 2;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0rem;
+}
+
+.slogan p:last-child {
+  margin-top: 1.5rem;
 }
 
 main {
@@ -74,7 +93,7 @@ main {
 
 .overview-flex-box {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .figure {
@@ -84,10 +103,105 @@ main {
   width: 100%;
 }
 
+#contents {
+  margin-top: 2rem;
+}
+
+#contents .h2-title,
+h3 {
+  margin-right: -1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 1rem;
+}
+
+#contents .h2-title {
+  position: relative;
+
+  font-family: 'Anton', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+#contents .h2-title::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-65%, -50%) rotate(45deg);
+
+  background-color: rgba(241, 98, 114, 0.3);
+  z-index: -100;
+}
+
+.type-of-thing {
+  margin: 0.75rem 0;
+  padding: 1rem;
+  text-align: center;
+  border: 0.5rem solid rgba(241, 98, 114, 0.5);
+  border-radius: 0.5rem;
+}
+
+.type-of-thing i {
+  font-size: 3rem;
+  color: rgba(241, 98, 114, 0.7);
+}
+
+.type-of-thing p {
+  line-height: 1.25;
+  text-align: justify;
+}
+
+.type-of-thing .readmore {
+  text-align: right;
+}
+
+.type-of-thing a {
+  text-decoration: none;
+  color: #555;
+  border-bottom: 1px dotted #555;
+}
+
+#footer {
+  padding: 2rem 0 5rem;
+  background: #555;
+}
+
+.footer-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 50%;
+  margin: 0 auto;
+}
+
+.footer-icons i {
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+
+
+.footer-copyright ul {
+  list-style: none;
+  color: whitesmoke;
+}
+.footer-copyright a{
+  /* color: whitesmoke; */
+}
+
+
+
+
 @media screen and (min-width: 768px) {
   .overview-flex-box {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
   
   .overview-flex-box .figure  {
