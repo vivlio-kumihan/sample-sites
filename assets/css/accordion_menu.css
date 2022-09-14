@@ -1,114 +1,118 @@
 
-#accordion{
+#acc-menu {
   position:relative;
   width: 320px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 0;
   line-height: 1.5;
 }
 
-/* インプットのボタン表示が見えないのはなぜか？ */
-#accordion input{
+#acc-menu input{
+  /* #accordio<-->input の関係を明示させているのは、 */
   position:absolute;
   display: none;
 }
-#accordion div div{
+
+#acc-menu .first-level h3 {
+  /* h3<-->h3: before の関係があるからという理解でいいか？ */
   position: relative;
-  padding: 2rem;
-  /* border-top: 1px solid #d4ebf2;
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+  background: #add8e6;
+  border-top: 1px solid #d4ebf2;
   border-bottom: 1px solid #86c5da;
-  background: #add8e6; */
 }
-#accordion label:first-child div div{
-  border-top: 0;
-}
-#accordion label:last-child div div{
-  border-bottom: 0;
-}
-#accordion div div:hover{
-  background: #a0d2e2;
-	cursor: pointer;
-}
-#accordion div div:before{
+
+/* メニュー全体の上下に罫線を入れたい場合の命令 */
+/* #acc-menu label:first-child .first-level h3 {
+  border-top: 1rem solid #333;
+} */
+/* #acc-menu label:last-child .first-level h3 {
+  border-bottom: 1rem solid #333;
+} */
+
+#acc-menu .first-level h3:before{
   position:absolute;
-  top: 13px;
-  left:10px;
+  top: 0.5rem;
+  left:1rem;
   color: #2f7f99;
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: "\f2f5";
 }
-#accordion div div:after{
+#acc-menu .first-level h3:after{
   position:absolute;
-  top: 15px;
-  right:10px;
-	color: #2f7f99;
+  top: 0.5rem;
+  right: 1rem;
+  color: #2f7f99;
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: "\f105";
-  -moz-transition: .3s;
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  -ms-transition: .3s;
-  transition: .3s;
+  transition: 0.5s;
 }
-#accordion input:checked + div div:after{
-  top: 12px;
-  right: 15px;
-  -moz-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-#accordion ul{
-  list-style: none;
-  margin: 0;
+
+#acc-menu ul{
   background: #e1f1f6;
 }
-#accordion ul li a{
+
+#acc-menu li {
+  list-style: none;
+}
+
+#acc-menu .first-level a {
   display: block;
+  /* はみ出た部分を表示しない */
   overflow: hidden;
+  /* 初動は高さがない状態に設定しておく。 */
   height: 0;
-  padding: 0px 70px;
+  transition: 0.7s;
+}
+
+#acc-menu .first-level h3:hover{
+  background: #a0d2e2;
+	cursor: pointer;
+}
+
+#acc-menu input:checked + .first-level h3:after{
+  top: 0.5rem;
+  right: 1rem;
+  transform: rotate(90deg);
+}
+
+#acc-menu input:checked + .first-level a{
+  position:relative;
   color: #333;
   text-decoration: none;
-  -moz-transition: .3s;
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  -ms-transition: .3s;
-  transition: .3s;
-}
-#accordion input:checked + div ul li a{
-  position:relative;
-  background: none;
-  line-height: 1;
-	height: 16px;
-  padding: 13px 70px;
+  /* なんでこれで縦位置センターに調整できるのか？ */
+  line-height: 3;
+  padding-left: 3.5rem;
+	height: 3rem;
+  /* 上の罫線を白にしておくことで後ろで設定している影が活きる。 */
   border-top: 1px solid #fff;
   border-bottom: 1px solid #a0d2e2;
 }
-#accordion input:checked + div ul li:first-child a{
+
+#acc-menu input:checked + .first-level li:first-child a{
+  /* 上の罫線を無くすことで影が活きる。 */
   border-top: 0;
-  box-shadow: 0 7px 7px -7px rgba(0,0,0,.5) inset;
+  box-shadow: 0 7px 7px -7px rgba(0, 0, 0, 0.5) inset;
 }
-#accordion input:checked + div ul li:last-child a{
+
+#acc-menu input:checked + .first-level li:last-child a{
   border-bottom: 0;
 }
-#accordion input:checked + div ul li a:hover{
+
+#acc-menu input:checked + .first-level a:hover {
   background: #d4ebf2;
   border-top-color: #eef7fa;
 }
-#accordion input:checked + div ul li a:before{
+
+#acc-menu input:checked + .first-level a:before{
   position: absolute;
-  top: 16px;
-  left: 45px;
+  top: 0;
+  left: 2rem;
   color: #2f7f99;
-  font:16px/100% 'Typicons';
-  content: "x";
-  -moz-transition: .3s;
-  -webkit-transition: .3s;
-  -o-transition: .3s;
-  -ms-transition: .3s;
-  transition: .3s;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: "\f058";
+  transition: 0.4s;
 }
