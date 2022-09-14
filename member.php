@@ -92,31 +92,31 @@ if (!$_SESSION['email']) {
         <div class="contents-header">
           <h2 class="h2-title">contents</h2>
           <h3>目次</h3>
-          <p class="txt-center">すべてのプランに標準でご利用いただけるサービスです。<br class="pc-only">
+          <p>すべてのプランに標準でご利用いただけるサービスです。<br class="pc-only">
             その他にも会議に必要な備品など数多く取り揃えておりますので申し込み時にお問い合わせください。</p>
         </div>
         <ul class="cando">
           <li class="type-of-thing">
             <i class="fa-solid fa-book"></i>
             <h4>本</h4>
-            <p>無料のWi-Fiを完備しております。ご自由にご利用ください。 </p>
+            <p>エリザベス女王の国葬には、バイデン米大統領やドイツのシュタインマイヤー大統領らが参列する予定だ。政府内では「英国で弔問外交を展開する必要がある」（官邸筋）として、首相も訪英を検討すべきだとの意見も出ていた。</p>
             <p class="readmore"><a href="./book.php">関連ページへ</a></p>
           </li>
           <li class="type-of-thing">
             <i class="fa-solid fa-scroll"></i>
             <h4>組版</h4>
-            <p>会議内容を収録できます。ボイスレコーダーの貸し出しになります。</p>
+            <p>エリザベス女王の国葬には、バイデン米大統領やドイツのシュタインマイヤー大統領らが参列する予定だ。政府内では「英国で弔問外交を展開する必要がある」（官邸筋）として、首相も訪英を検討すべきだとの意見も出ていた。</p>
             <p class="readmore"><a href="./typesetting.php">関連ページへ</a></p>
           </li>
           <li class="type-of-thing">
             <i class="fa-solid fa-laptop-code"></i>
             <h4>プログラミング</h4>
-            <p>ロビーのドリンクバーをご利用いただけます。</p>
+            <p>エリザベス女王の国葬には、バイデン米大統領やドイツのシュタインマイヤー大統領らが参列する予定だ。政府内では「英国で弔問外交を展開する必要がある」（官邸筋）として、首相も訪英を検討すべきだとの意見も出ていた。</p>
             <p class="readmore"><a href="./programming.php">関連ページへ</a></p>
             <li class="type-of-thing">
               <i class="fa-solid fa-camera-retro"></i>
               <h4>写真</h4>
-              <p>プリント可能なホワイトボードを各部屋に設置しています。</p>
+              <p>エリザベス女王の国葬には、バイデン米大統領やドイツのシュタインマイヤー大統領らが参列する予定だ。政府内では「英国で弔問外交を展開する必要がある」（官邸筋）として、首相も訪英を検討すべきだとの意見も出ていた。</p>
               <p class="readmore"><a href="./photography.php">関連ページへ</a></p>
           </li>
           </li>
