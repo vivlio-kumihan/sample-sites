@@ -83,7 +83,7 @@ if (!$_SESSION['email']) {
       <section class="overview">
         <h3 class="heading">本という形</h3>
         <article class="overview-flex-box">
-          <div class="figure"><img src="./assets/img/sample.jpg" alt="" /></div>
+          <div class="figure"><img src="./assets/img/coffee-2151200_1920.jpeg" alt="" /></div>
           <p>ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社ではホームページサンプル株式会社では最新技術と自然との革新的な技術で世の中を調和を目指します。革新的な技術で世の中を動かす企業。動かす企業。</p>
         </article>
       </section>

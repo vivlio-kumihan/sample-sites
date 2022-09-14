@@ -14,6 +14,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/fonts.css" />
   <link rel="stylesheet" href="./assets/css/ss-style.css" />
+  <link rel="stylesheet" href="./assets/css/accordion_menu.css" />
+
 </head>
 
 <body class="home">
