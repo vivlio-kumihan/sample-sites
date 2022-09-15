@@ -220,7 +220,7 @@ br.pc-only {
   text-decoration: none;
 }
 
-
+/**************** phto page ****************/
 .grid-photos {
   display: grid;
   grid-template-columns: 150px 150px;
@@ -233,7 +233,19 @@ br.pc-only {
 .grid-photos img {
   display: block;
   width: 100%;
+  box-shadow:
+    0.1px 0.2px 0.7px rgba(0, 0, 0, 0.047),
+    0.3px 0.5px 1.7px rgba(0, 0, 0, 0.064),
+    0.6px 1px 3.3px rgba(0, 0, 0, 0.072),
+    1.1px 1.8px 5.8px rgba(0, 0, 0, 0.083),
+    2.1px 3.3px 10.9px rgba(0, 0, 0, 0.11),
+    5px 8px 26px rgba(0, 0, 0, 0.18);
 }
+/**************** phto page ここまで ****************/
+
+
+/**************** modal****************/
+/**************** modal ここまで ****************/
 
 
 @media screen and (min-width: 768px) {
@@ -284,138 +296,3 @@ br.pc-only {
     width: 30%;
   }
 }
-
-/**************** modal****************/
-/* モーダル */
-.modal-overlay {
-  align-items: center;
-  background: rgba(0, 0, 0, .6);
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 100;
-}
-
-.modal-container {
-  background-color: #fff;
-  max-height: 80vh;
-  max-width: 500px;
-  overflow-y: auto;
-  padding: 30px;
-  width: 80%;
-}
-
-.modal-header {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-.modal-close {
-  background: transparent;
-  border: 0;
-}
-
-.modal-header .modal-close::before {
-  content: "\2715";
-}
-
-.modal-content {
-  line-height: 1.5;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.modal-open {
-  display: block;
-  margin: 100px auto;
-}
-
-.box01 {
-  background-color: #ccc;
-  height: 200px;
-  margin: 0 auto;
-  width: 80%;
-}
-
-.box02 {
-  background-color: #ccc;
-  height: 200px;
-  margin: 0 auto;
-  width: 80%;
-}
-
-/* モーダルアニメーション */
-@keyframes mmfadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes mmfadeOut {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes mmslideIn {
-  from {
-    transform: translateY(15%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-@keyframes mmslideOut {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-10%);
-  }
-}
-
-.micromodal-slide {
-  display: none;
-}
-
-.micromodal-slide.is-open {
-  display: block;
-}
-
-.micromodal-slide[aria-hidden="false"] .modal-overlay {
-  animation: mmfadeIn .3s cubic-bezier(.0, .0, .2, 1);
-}
-
-.micromodal-slide[aria-hidden="false"] .modal-container {
-  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
-}
-
-.micromodal-slide[aria-hidden="true"] .modal-overlay {
-  animation: mmfadeOut .3s cubic-bezier(.0, .0, .2, 1);
-}
-
-.micromodal-slide[aria-hidden="true"] .modal-container {
-  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
-}
-
-.micromodal-slide .modal-container,
-.micromodal-slide .modal-overlay {
-  will-change: transform;
-}
-/**************** modal　ここまで ****************/

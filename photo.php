@@ -23,51 +23,38 @@ $images = glob('./assets/img/thumbnail/*.jpg');
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/fonts.css" />
+  <link rel="stylesheet" href="./assets/css/modaal.min.css" />
   <link rel="stylesheet" href="./assets/css/ss-style.css" />
   <link rel="stylesheet" href="./assets/css/ss-style-pages-org.css" />
-  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
   <script src="./assets/js/behavior.js"></script>
+  <script src="./assets/js/modaal.min.js" defer></script>
 </head>
 
 <body>
   <header></header>
 
 
-  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-    <!-- 背景のオーバーレイ -->
-    <div class="modal-overlay" tabindex="-1" data-micromodal-close>
-      <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-        <header class="modal-header">
-          <h2 class="modal-title" id="modal-1-title">Micromodal</h2>
-          <!-- 閉じるボタン -->
-          <button class="modal-close" aria-label="Close modal" data-micromodal-close></button>
-        </header>
-        <!-- モーダルのコンテンツ -->
-        <div class="modal-content" id="modal-1-content">
-          Modal Content
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- 開くボタン -->
-  <button data-micromodal-trigger="modal-1" class="modal-open">
-    open
-  </button>
-
   <div class="container">
     <ul class="grid-photos">
       <?php foreach ($images as $photo) { ?>
-        <div class="photo">
-          <?php echo '<li><img src="', $photo, '" alt="thumbnail"></li>'; ?>
-        </div>
+        <?php
+          $path_to_photo = './assets/img/thumbnail/' . basename($photo);
+          $path_to_view_photo = './assets/img/album/' . basename($photo);
+        ?>
+        <?php echo '<a class="view-photo" href="', $path_to_view_photo, '" data-group="gallery" class="gallery">' ?>
+          <div class="photo">
+            <?php echo '<li><img src="', $path_to_photo, '" alt="thumbnail"></li>'; ?>
+          </div>
+        </a>
       <?php } ?>
     </ul>
   </div>
 
+  <!-- <?php echo '<li><img src="', $photo, '" alt="thumbnail"></li>'; ?> -->
   <footer></footer>
 
   <aside></aside>
-  <script>MicroModal.init();</script>
+
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>
 
