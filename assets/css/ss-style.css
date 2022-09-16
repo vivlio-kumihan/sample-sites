@@ -9,6 +9,30 @@ html {
   box-sizing: border-box;
 }
 
+@media screen and (min-width:768px) {
+  .inner {
+    max-width: 1200px;
+  }
+}
+
+.sp-only {
+  display: block;
+}
+
+.pc-only {
+  display: none;
+}
+
+@media screen and (min-width:768px) {
+  .sp-only {
+    display: none;
+  }
+
+  .pc-only {
+    display: block;
+  }
+}
+
 body.home {
   background: url(../img/banner.jpg) no-repeat center center / cover;
   height: 100vh;
@@ -99,7 +123,7 @@ p.greeting {
 
 /* ハンバーガーメニューの中身を表示する。 */
 .menu-content {
-  width: 100%;
+  width: 50%;
   height: 100%;
   position: fixed;
   top: 0;
@@ -142,7 +166,7 @@ p.greeting {
 
 /* リスト表記を常は隠す。 */
 .menu-content {
-  width: 100%;
+  width: 70%;
   height: 100%;
   position: fixed;
   top: 0;
@@ -160,7 +184,7 @@ p.greeting {
   z-index: 50;
   top: 0;
   left: 0;
-  width: 380px;
+  width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -173,6 +197,39 @@ p.greeting {
   left: 0;
 }
 /**************** ハンバーガーメニュー　ここまで ****************/
+
+/**************** メニューバー ****************/
+@media screen and (min-width:768px) {
+  .logo-area {
+    width: 250px;
+  }
+
+  .menu-bar {
+    flex-direction: row;
+    padding-top: 1rem;
+    margin: 0;
+  }
+
+  .menu-item {
+    border-bottom: none;
+    margin: 0;
+    padding-bottom: 0;
+  }
+
+  menu-item a {
+    color: #333;
+    width: 120px;
+  }
+
+  menu-item a:hover {
+    color: #85a7cc;
+  }
+}
+
+
+
+/**************** メニューバー　ここまで ****************/
+
 
 
 /**************** POSTでのエントリー関連 ****************/

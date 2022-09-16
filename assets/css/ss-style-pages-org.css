@@ -68,7 +68,7 @@ body {
 
 .slogan p {
   font-family: 'Noto Sans JP', sans-serif;
-  line-height: 2;
+  line-height: 1.5;
   font-weight: 700;
   font-size: 1.1rem;
   letter-spacing: 0rem;
@@ -221,6 +221,20 @@ br.pc-only {
 }
 
 /**************** phto page ****************/
+.header-button {
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 75px;
+  height: 75px;
+  background-color: transparent;
+  color: #000;
+}
 .grid-photos {
   display: grid;
   grid-template-columns: 150px 150px;

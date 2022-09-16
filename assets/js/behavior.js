@@ -3,16 +3,14 @@ $(".openbtn1").click(function () {
 });
 
 jQuery(function ($) {
-    $('.header-button').on('click', function () {
-        $('body').toggleClass('open');
-    });
     // $('.gallery').each(function () {
     //   $(this).modaal({
     //     type: 'image'
     //   });
     // });
     $('.gallery').modaal({
-        type: 'image'
+        type: 'image',
+        animation_speed: '1000',
+        background: '#fff',
     });
-
 });
