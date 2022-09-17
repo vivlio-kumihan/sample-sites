@@ -1,83 +1,5 @@
 @charset "utf-8";
 
-html {
-  font-size: 15px;
-}
-
-body {
-  color: #555;
-  font-family: 'Noto Sans JP', sans-serif;
-  line-height: 1.75;
-  -webkit-text-size-adjust: none;
-}
-
-.container {
-  width: 100%;
-}
-
-#header {
-  /* display: none; */
-}
-
-
-#nav {
-  /* display: none; */
-}
-
-#banner {
-  position: relative;
-  background: url(../img/books-2211342_1920.jpeg) no-repeat center center / cover;
-  height: 100vh;
-}
-
-.slogan {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 100%;
-  
-}
-
-.slogan h2, .slogan h3, .slogan p {
-  text-align: center;
-  font-family: 'Anton', sans-serif;
-  font-size: 2em;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  color: whitesmoke;
-  text-shadow:
-  0.6px 0.8px 2.2px rgba(0, 0, 0, 0.281),
-  1.3px 2px 5.3px rgba(0, 0, 0, 0.404),
-  2.5px 3.8px 10px rgba(0, 0, 0, 0.5),
-  4.5px 6.7px 17.9px rgba(0, 0, 0, 0.596),
-  8.4px 12.5px 33.4px rgba(0, 0, 0, 0.719),
-  20px 30px 80px rgba(0, 0, 0, 1);
-}
-
-.slogan h3 {
-  margin: 0.75rem 0rem 0.75rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #fff;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 900;
-  font-size: 1.4rem;
-  letter-spacing: 0.25rem;
-}
-
-.slogan p {
-  font-family: 'Noto Sans JP', sans-serif;
-  line-height: 1.5;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0rem;
-}
-
-.slogan p:last-child {
-  margin-top: 1.5rem;
-}
-
 main {
   padding: 0 1rem;
 }
@@ -151,9 +73,6 @@ h3 {
   text-align: justify;
 }
 
-br.pc-only {
-  display: none;
-}
 
 .type-of-thing {
   list-style: none;

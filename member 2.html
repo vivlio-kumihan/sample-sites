@@ -1,12 +1,12 @@
-<!-- <?php
-      session_start();
-      if (!$_SESSION['email']) {
-        $host = $_SERVER['HTTP_HOST'];
-        $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-        header("Location: //$host$uri/login.php");
-        exit;
-      }
-      ?> -->
+<?php
+session_start();
+if (!$_SESSION['email']) {
+  $host = $_SERVER['HTTP_HOST'];
+  $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+  header("Location: //$host$uri/login.php");
+  exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -15,7 +15,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>会員ページ</title>
+  <title>メンバーページ</title>
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/fonts.css" />
@@ -36,51 +36,69 @@
             <li><a href="./typesetting.php">組版</a></li>
             <li><a href="./programming.php">プログラミング</a></li>
             <li><a href="./photo.php">写真</a></li>
-            <li><a href="./register.php">sign up</a></li>
-            <li><a href="./login.php">log in</a></li>
-            <li><a href="./contact.php">contact</a></li>
-            <li><a href="./board.php">bbs</a></li>
+            <li><a href="./member.php">メンバーページ</a>
+              <ul class="sub-menu">
+                <li><a href="./register.php">sign up</a></li>
+                <li><a href="./login.php">log in</a></li>
+                <li><a href="./contact.php">contact</a></li>
+                <li><a href="./board.php">bbs</a></li>
+              </ul>
+            </li>
           </ul>
+        </div>
       </div>
     </div>
-    
-    <h1>hello</h1>
-    <ul class="menu-bar">
-      <li class="menu-item"><a href="./book.html">本</a></li>
-      <li class="menu-item"><a href="./typesetting.php">組版</a></li>
-      <li class="menu-item"><a href="./programming.php">プログラミング</a></li>
-      <li class="menu-item"><a href="./photo.php">写真</a></li>
-      <li class="menu-item"><a href="./register.php">sign up</a></li>
-      <li class="menu-item"><a href="./login.php">log in</a></li>
-      <li class="menu-item"><a href="./contact.php">contact</a></li>
-      <li class="menu-item"><a href="./board.php">bbs</a></li>
-    </ul>
+
     <div class="pc-only">
+      <div class="menu-bar">
+        <h1 class="logo">
+          <img src="./assets/img/logo_white.png" alt="logo">
+          <span>kumihan.com</span>
+        </h1>
+        <ul class="menu-bar-lists">
+          <li class="menu-bar-item"><a href="./book.html">本</a></li>
+          <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li>
+          <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li>
+          <li class="menu-bar-item"><a href="./photo.php">写真</a></li>
+          <li class="menu-bar-item"><a href="./member.php">メンバーページ</a>
+            <ul class="sub-menu">
+              <li class="menu-bar-item"><a href="./register.php">sign up</a></li>
+              <li class="menu-bar-item"><a href="./login.php">log in</a></li>
+              <li class="menu-bar-item"><a href="./contact.php">contact</a></li>
+              <li class="menu-bar-item"><a href="./board.php">bbs</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div id="banner">
+        <div class="main-visual">
+          <div class="slogan">
+            <h1 class="logo">
+              <img src="./assets/img/logo_white@2x.png" alt="logo">
+              <span>kumihan.com</span>
+            </h1>
+            <h3>ことばを残す</h3>
+            <p>
+              本当に残したい<br class="hp-only">
+              『ことば』を<br>
+              記録していきたいと<br class="hp-only">
+              思っているみなさんへ<br>
+              WEB標準の技術を使い<br class="hp-only">
+              『本』を手本にパッケージング</br>
+              その時々に必要な形で<br class="hp-only">
+              しっかりと想いを伝える……
+            </p>
+            <p>
+              そんなお手伝ができればと<br class="hp-only">
+              日々、考えております。
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
   <div class="container">
-    <div id="banner">
-      <div class="slogan">
-        <h2>kumihan.com</h2>
-        <h3>ことばを残す</h3>
-        <p>
-          本当に残したい</br>
-          『ことば』を</br>
-          記録していきたいと</br>
-          思っているみなさんへ</br>
-          WEB標準の技術を使い</br>
-          『本』を手本にパッケージング</br>
-          その時々に必要な形で</br>
-          しっかりと想いを伝える……</br>
-        </p>
-        <p>
-          そんなお手伝ができればと</br>
-          日々、考えております。
-        </p>
-      </div>
-    </div>
-
     <main>
       <section class="overview">
         <h2 class="h2-title">book</h2>
