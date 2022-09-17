@@ -1,12 +1,12 @@
 <!-- <?php
-session_start();
-if (!$_SESSION['email']) {
-  $host = $_SERVER['HTTP_HOST'];
-  $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-  header("Location: //$host$uri/login.php");
-  exit;
-}
-?> -->
+      session_start();
+      if (!$_SESSION['email']) {
+        $host = $_SERVER['HTTP_HOST'];
+        $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        header("Location: //$host$uri/login.php");
+        exit;
+      }
+      ?> -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -25,26 +25,38 @@ if (!$_SESSION['email']) {
 
 <body>
   <header>
-    <nav id="nav">
-      <div class="inner">
-        <a class="menu" id="menu"><span>MENU</span></a>
-        <div class="panel">
+    <div class="hp-only">
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        <label for="menu-btn-check" id="nav-black"></label>
+        <div class="menu-content">
           <ul>
-            <li class="current-menu-item"><a href="index.php"><strong>トップページ</strong><span>Top</span></a></li>
-            <li>
-              <a href="./book.html"><strong>本</strong><span>book</span></a>
-              <ul class="sub-menu">
-                <li><a href="sample.html">Vivliostyle</a></li>
-                <li><a href="sample.html">サンプル</a></li>
-              </ul>
-            </li>
-            <li><a href="./dtp.php"><strong>組版</strong><span>typesetting</span></a></li>
-            <li><a href="./programming.php"><strong>プログラミング</strong><span>programming</span></a></li>
-            <li><a href="./photo.php"><strong>写真</strong><span>photography</span></a></li>
+            <li><a href="./book.html">本</a></li>
+            <li><a href="./typesetting.php">組版</a></li>
+            <li><a href="./programming.php">プログラミング</a></li>
+            <li><a href="./photo.php">写真</a></li>
+            <li><a href="./register.php">sign up</a></li>
+            <li><a href="./login.php">log in</a></li>
+            <li><a href="./contact.php">contact</a></li>
+            <li><a href="./board.php">bbs</a></li>
           </ul>
-        </div>
       </div>
-    </nav>
+    </div>
+    
+    <h1>hello</h1>
+    <ul class="menu-bar">
+      <li class="menu-item"><a href="./book.html">本</a></li>
+      <li class="menu-item"><a href="./typesetting.php">組版</a></li>
+      <li class="menu-item"><a href="./programming.php">プログラミング</a></li>
+      <li class="menu-item"><a href="./photo.php">写真</a></li>
+      <li class="menu-item"><a href="./register.php">sign up</a></li>
+      <li class="menu-item"><a href="./login.php">log in</a></li>
+      <li class="menu-item"><a href="./contact.php">contact</a></li>
+      <li class="menu-item"><a href="./board.php">bbs</a></li>
+    </ul>
+    <div class="pc-only">
+    </div>
   </header>
 
   <div class="container">
@@ -79,7 +91,7 @@ if (!$_SESSION['email']) {
         </article>
       </section>
 
-      <section id= "contents" class="contents-area">
+      <section id="contents" class="contents-area">
         <div class="contents-header">
           <h2 class="h2-title">contents</h2>
           <h3>目次</h3>
@@ -104,30 +116,33 @@ if (!$_SESSION['email']) {
             <h4>プログラミング</h4>
             <p>エリザベス女王の国葬には、バイデン米大統領やドイツのシュタインマイヤー大統領らが参列する予定だ。政府内では「英国で弔問外交を展開する必要がある」（官邸筋）として、首相も訪英を検討すべきだとの意見も出ていた。</p>
             <p class="readmore"><a href="./programming.php">関連ページへ</a></p>
-            <li class="type-of-thing">
-              <i class="fa-solid fa-camera-retro"></i>
-              <h4>写真</h4>
-              <p>エリザベス女王の国葬には、バイデン米大統領やドイツのシュタインマイヤー大統領らが参列する予定だ。政府内では「英国で弔問外交を展開する必要がある」（官邸筋）として、首相も訪英を検討すべきだとの意見も出ていた。</p>
-              <p class="readmore"><a href="./photography.php">関連ページへ</a></p>
+          <li class="type-of-thing">
+            <i class="fa-solid fa-camera-retro"></i>
+            <h4>写真</h4>
+            <p>エリザベス女王の国葬には、バイデン米大統領やドイツのシュタインマイヤー大統領らが参列する予定だ。政府内では「英国で弔問外交を展開する必要がある」（官邸筋）として、首相も訪英を検討すべきだとの意見も出ていた。</p>
+            <p class="readmore"><a href="./photography.php">関連ページへ</a></p>
           </li>
           </li>
         </ul>
       </section>
     </main>
 
-    <footer id="footer">
-      <ul class="footer-icons">
-        <li><a href="https://twitter.com/vivlioKumihan"><i class="fa-brands fa-square-twitter"></i></a></li>
-        <li><a href="https://github.com/vivlio-kumihan"><i class="fa-brands fa-square-github"></i></a></li>
-        <li><a href="https://facebook.com/vivlioKumihan"><i class="fa-brands fa-square-facebook"></i></a></li>
-        <li><a href="#"><i class="fa-brands fa-slack"></i></a></li>
-      </ul>
-      <ul class="footer-copyright">
-        <li>&copy; kumihan.com</li>
-        <li>Design: <a href="https://kumihan.com">Nobuyuki Takahiro</a></li>
-      </ul>
-    </footer>
   </div>
+
+  <aside></aside>
+
+  <footer id="footer">
+    <ul class="footer-icons">
+      <li><a href="https://twitter.com/vivlioKumihan"><i class="fa-brands fa-square-twitter"></i></a></li>
+      <li><a href="https://github.com/vivlio-kumihan"><i class="fa-brands fa-square-github"></i></a></li>
+      <li><a href="https://facebook.com/vivlioKumihan"><i class="fa-brands fa-square-facebook"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-slack"></i></a></li>
+    </ul>
+    <ul class="footer-copyright">
+      <li>&copy; kumihan.com</li>
+      <li>Design: <a href="https://kumihan.com">Nobuyuki Takahiro</a></li>
+    </ul>
+  </footer>
 
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>
