@@ -148,6 +148,7 @@ header {
   ul.sub-menu .menu-bar-item {
     width: 100%;
   }
+  
   ul .menu-bar-item:hover>ul.sub-menu {
     display: block;
   }
