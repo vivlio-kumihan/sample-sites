@@ -26,25 +26,31 @@ if (!$_SESSION['email']) {
 <body>
   <header>
     <div class="hp-only">
-      <div class="hamburger-menu">
-        <input type="checkbox" id="menu-btn-check">
-        <label for="menu-btn-check" class="menu-btn"><span></span></label>
-        <label for="menu-btn-check" id="nav-black"></label>
-        <div class="menu-content">
-          <ul>
-            <li><a href="./book.html">本</a></li>
-            <li><a href="./typesetting.php">組版</a></li>
-            <li><a href="./programming.php">プログラミング</a></li>
-            <li><a href="./photo.php">写真</a></li>
-            <li><a href="./member.php">メンバーページ</a>
-              <ul class="sub-menu">
-                <li><a href="./register.php">sign up</a></li>
-                <li><a href="./login.php">log in</a></li>
-                <li><a href="./contact.php">contact</a></li>
-                <li><a href="./board.php">bbs</a></li>
-              </ul>
-            </li>
-          </ul>
+      <div class="hamburger-menu-container">
+        <h1 class="logo">
+          <img src="./assets/img/logo_white.png" alt="logo">
+          <span>kumihan.com</span>
+        </h1>
+        <div class="hamburger-menu">
+          <input type="checkbox" id="menu-btn-check">
+          <label for="menu-btn-check" class="menu-btn"><span></span></label>
+          <label for="menu-btn-check" id="nav-black"></label>
+          <div class="menu-content">
+            <ul>
+              <li><a href="./book.html">本</a></li>
+              <li><a href="./typesetting.php">組版</a></li>
+              <li><a href="./programming.php">プログラミング</a></li>
+              <li><a href="./photo.php">写真</a></li>
+              <li><a class="sub-menu" href="./member.php">メンバーページ</a>
+                <ul class="sub-menu">
+                  <li><a href="./register.php">sign up</a></li>
+                  <li><a href="./login.php">log in</a></li>
+                  <li><a href="./contact.php">contact</a></li>
+                  <li><a href="./board.php">bbs</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -70,29 +76,30 @@ if (!$_SESSION['email']) {
           </li>
         </ul>
       </div>
-      <div id="banner">
-        <div class="main-visual">
-          <div class="slogan">
-            <h1 class="logo">
-              <img src="./assets/img/logo_white@2x.png" alt="logo">
-              <span>kumihan.com</span>
-            </h1>
-            <h3>ことばを残す</h3>
-            <p>
-              本当に残したい<br class="hp-only">
-              『ことば』を<br>
-              記録していきたいと<br class="hp-only">
-              思っているみなさんへ<br>
-              WEB標準の技術を使い<br class="hp-only">
-              『本』を手本にパッケージング</br>
-              その時々に必要な形で<br class="hp-only">
-              しっかりと想いを伝える……
-            </p>
-            <p>
-              そんなお手伝ができればと<br class="hp-only">
-              日々、考えております。
-            </p>
-          </div>
+    </div>
+
+    <div id="banner">
+      <div class="main-visual">
+        <div class="slogan">
+          <h1 class="logo pc-only">
+            <img src="./assets/img/logo_white@2x.png" alt="logo">
+            <span>kumihan.com</span>
+          </h1>
+          <h3>ことばを残す</h3>
+          <p>
+            本当に残したい<br class="hp-only">
+            『ことば』を<br>
+            記録していきたいと<br class="hp-only">
+            思っているみなさんへ<br>
+            WEB標準の技術を使い<br class="hp-only">
+            『本』を手本にパッケージング</br>
+            その時々に必要な形で<br class="hp-only">
+            しっかりと想いを伝える……
+          </p>
+          <p>
+            そんなお手伝ができればと<br class="hp-only">
+            日々、考えております。
+          </p>
         </div>
       </div>
     </div>

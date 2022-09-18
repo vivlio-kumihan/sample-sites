@@ -54,7 +54,7 @@
       </div>
     </header>
     <main>
-      <p class="greeting">kumihan.com</p>
+      <p style="color: whitesmoke;">kumihan.com</p>
     </main>
   </div>
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>

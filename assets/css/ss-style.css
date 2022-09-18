@@ -29,6 +29,30 @@ li {
   list-style: none;
 }
 
+header {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.25rem;
+  color: whitesmoke;
+  z-index: 100;
+}
+
+.logo img,
+.logo span {
+  vertical-align: middle;
+}
+
+.logo img {
+  height: 2rem;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 1200px;
@@ -52,18 +76,15 @@ li {
   .pc-only {
     display: block;
   }
+
+  .logo {
+    margin-left: 1rem;
+  }
 }
+
 
 /**************** PC header ****************/
 /**************** メニューバー ****************/
-
-header {
-  position: relative;
-
-  width: 100vw;
-  height: 100vh;
-}
-
 @media screen and (min-width:768px) {
   .menu-bar {
     position: absolute;
@@ -90,30 +111,7 @@ header {
   .menu-bar a {
     padding: 1rem 0;
   }
-  .logo {
-    margin-left: 1rem;
-  }
 
-  .logo img, .logo span {
-    vertical-align: middle;
-  }
-
-  .logo {
-    font-family: 'Anton', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 0.25rem;
-    color: whitesmoke;
-  }
-
-  .logo img {
-    height: 2rem;
-  }
-
-  ul.menu-bar-lists {
-  }
-  
-  
-  
   .menu-bar-lists {
     display: block;
     margin: 0;
@@ -130,7 +128,6 @@ header {
   
   .menu-bar-item:hover {
     background-color: rgb(111, 29, 38);
-
   }
 
   .menu-bar-item a {
@@ -145,6 +142,7 @@ header {
     background-color: rgba(238, 62, 83, 0.8);
     text-align: center;
   }
+
   ul.sub-menu .menu-bar-item {
     width: 100%;
   }
@@ -156,17 +154,202 @@ header {
   .menu-bar-item a:hover {
     color: rgb(181, 47, 63);
   }
+}
+/**************** メニューバー ここまで ****************/
 
+
+/**************** ハンバーガーメニュー ****************/
+.hamburger-menu-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(238, 62, 83, 0.8);
 }
 
+.logo {
+  margin-left: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+}
+
+.logo img {
+  height: 1.75rem;
+}
+
+/* 3本線のハンバーガーメニューボタンをここじ実装 */
+.menu-btn {
+  /* fixしたら高さを決めてやらないと上下センターが効かなくなる。 */
+  position: fixed;
+  top: 0;
+  right: 0;
+  
+  height: 3rem;
+  display: flex;
+  width: 100%;
+  padding-right: 1rem;
+  justify-content: right;
+  align-items: center;
+  z-index: 100;
+}
+
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+
+/* メニューの線、最初を表示 */
+/* 真ん中の線を『bottom』としてそこから8px『上げる』。 */
+.menu-btn span:before {
+  bottom: 8px;
+}
+
+/* メニューの線、最後を表示 */
+/* 真ん中の線を『top』としてそこから8px『下げる』。 */
+.menu-btn span:after {
+  top: 8px;
+}
+
+/* 3本線を✖️にする。 */
+/*メニューオープン時は真ん中の線を透明にする*/
+#menu-btn-check:checked~.menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#menu-btn-check:checked~.menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#menu-btn-check:checked~.menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* ハンバーガーメニューの実装を確認したら
+   チェックボックスは隠す。 */
+#menu-btn-check {
+  display: none;
+}
+
+/* ハンバーガーメニューの中身を表示する。 */
+.menu-content {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  background-color: #941640;
+}
+
+.menu-content ul {
+  padding: 2rem 1rem 0;
+}
+
+ul.sub-menu {
+  padding: 0;
+}
+ul.sub-menu li:first-child {
+  border-top: 1px dotted #ffffff;
+}
+
+.menu-content ul li {
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+}
+
+ul .sub-menu li {
+  padding-left: 2rem;
+  border-bottom: 1px dotted #ffffff;
+}
+
+ul .sub-menu li:last-child {
+  border-bottom: none;
+}
+
+.menu-content ul li:hover {
+  background-color: #610d29;
+}
+
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  padding: 9px 15px 10px 0;
+  position: relative;
+}
+
+.menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+
+/* リスト表記を常は隠す。 */
+.menu-content {
+  width: 70%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  /*leftの値を変更してメニューを画面外へ*/
+  left: -100%;
+  z-index: 80;
+  background-color: #941640;
+  /*アニメーション設定*/
+  transition: all 0.5s;
+}
+
+#nav-black {
+  display: none;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#menu-btn-check:checked~#nav-black {
+  display: block;
+}
+
+#menu-btn-check:checked~.menu-content {
+  /*メニューを画面内へ*/
+  left: 0;
+}
+/**************** ハンバーガーメニュー ここまで ****************/
+
+
+/**************** バナー ****************/
 #banner {
+  /* headerに対して絶対的に設定している。 */
   position: absolute;
   top: 0%;
   left: 0%;
 
   width: 100vw;
   z-index: -100;
-  /* height: 100vh; */
 }
 
 .main-visual {
@@ -229,166 +412,7 @@ header {
 .slogan p:last-child {
   margin-top: 1.5rem;
 }
-
-/**************** メニューバー　ここまで ****************/
-
-p.greeting {
-  width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-
-  text-align: center;
-  font-size: 3rem;
-  font-family: 'Anton', sans-serif;
-  color: #fff;
-}
-
-/**************** ハンバーガーメニュー ****************/
-/* 3本線のハンバーガーメニューボタンをここじ実装 */
-.menu-btn {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-
-  display: flex;
-  height: 60px;
-  width: 60px;
-  justify-content: center;
-  align-items: center;
-  z-index: 90;
-  background-color: rgba(148, 22, 64, 0.7);
-}
-
-.menu-btn span,
-.menu-btn span:before,
-.menu-btn span:after {
-  content: '';
-  display: block;
-  height: 3px;
-  width: 25px;
-  border-radius: 3px;
-  background-color: #ffffff;
-  position: absolute;
-}
-
-/* メニューの線、最初を表示 */
-/* 真ん中の線を『bottom』としてそこから8px『上げる』。 */
-.menu-btn span:before {
-  bottom: 8px;
-}
-
-/* メニューの線、最後を表示 */
-/* 真ん中の線を『top』としてそこから8px『下げる』。 */
-.menu-btn span:after {
-  top: 8px;
-}
-
-
-/* 3本線を✖️にする。 */
-/*メニューオープン時は真ん中の線を透明にする*/
-#menu-btn-check:checked~.menu-btn span {
-  background-color: rgba(255, 255, 255, 0);
-}
-
-#menu-btn-check:checked~.menu-btn span::before {
-  bottom: 0;
-  transform: rotate(45deg);
-}
-
-#menu-btn-check:checked~.menu-btn span::after {
-  top: 0;
-  transform: rotate(-45deg);
-}
-
-
-/* ハンバーガーメニューの実装を確認したら
-   チェックボックスは隠す。 */
-#menu-btn-check {
-  display: none;
-}
-
-
-/* ハンバーガーメニューの中身を表示する。 */
-.menu-content {
-  width: 50%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 80;
-  background-color: #941640;
-}
-
-.menu-content ul {
-  padding: 70px 10px 0;
-}
-
-.menu-content ul li {
-  border-bottom: solid 1px #ffffff;
-  list-style: none;
-}
-
-.menu-content ul li a {
-  display: block;
-  width: 100%;
-  font-size: 15px;
-  box-sizing: border-box;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 9px 15px 10px 0;
-  position: relative;
-}
-
-.menu-content ul li a::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-top: solid 2px #ffffff;
-  border-right: solid 2px #ffffff;
-  transform: rotate(45deg);
-  position: absolute;
-  right: 11px;
-  top: 16px;
-}
-
-/* リスト表記を常は隠す。 */
-.menu-content {
-  width: 70%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  /*leftの値を変更してメニューを画面外へ*/
-  left: -100%;
-  z-index: 80;
-  background-color: #941640;
-  /*アニメーション設定*/
-  transition: all 0.5s;
-}
-
-#nav-black {
-  display: none;
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-}
-#menu-btn-check:checked~#nav-black {
-  display: block;
-}
-
-#menu-btn-check:checked~.menu-content {
-  /*メニューを画面内へ*/
-  left: 0;
-}
-/**************** ハンバーガーメニュー　ここまで ****************/
-
-
+/**************** バナー ここまで ****************/
 
 
 /**************** POSTでのエントリー関連 ****************/
