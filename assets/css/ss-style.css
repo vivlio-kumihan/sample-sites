@@ -16,6 +16,12 @@ body {
   -webkit-text-size-adjust: none;
 }
 
+header {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+}
+
 body.home {
   background: url(../img/banner.jpg) no-repeat center center / cover;
   height: 100vh;
@@ -29,7 +35,7 @@ li {
   list-style: none;
 }
 
-header {
+.greeting {
   position: relative;
 
   width: 100vw;
@@ -80,6 +86,62 @@ header {
   .logo {
     margin-left: 1rem;
   }
+
+
+  .slogan {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+  }
+
+  .slogan .logo,
+  .slogan h3,
+  .slogan p {
+    text-align: center;
+    color: whitesmoke;
+    text-shadow:
+      0px 0px 10px rgba(0, 0, 0, 1)
+  }
+
+  .slogan img {
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
+  }
+
+  .slogan .logo img {
+    height: 2.75rem;
+  }
+
+  .slogan .logo {
+    padding-right: 1.25rem;
+    font-size: 2rem;
+  }
+
+  .slogan h3 {
+    margin: 0.75rem 0rem 0.75rem;
+    padding-left: 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .slogan p {
+    margin-top: 1.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 2;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0rem;
+  }
+
+  .slogan p:last-child {
+    margin-top: 1.5rem;
+  }
 }
 
 
@@ -96,7 +158,7 @@ header {
     justify-content: space-between;
 
     width: 100%;
-    background-color: rgba(238, 62, 83, 0.8);
+    background-color: rgba(238, 62, 83, 0.7);
   }
 
   .menu-bar {
@@ -109,7 +171,7 @@ header {
     color: whitesmoke;
   }
   .menu-bar a {
-    padding: 1rem 0;
+    padding: 0.5rem 0.5rem;
   }
 
   .menu-bar-lists {
@@ -139,7 +201,7 @@ header {
     top: 100%;
     left: 0;
     display: none;
-    background-color: rgba(238, 62, 83, 0.8);
+    background-color: rgba(238, 62, 83, 0.7);
     text-align: center;
   }
 
@@ -168,7 +230,7 @@ header {
   align-items: center;
   width: 100%;
   height: 3rem;
-  background-color: rgba(238, 62, 83, 0.8);
+  background-color: rgba(238, 62, 83, 0.7);
 }
 
 .logo {
@@ -188,10 +250,15 @@ header {
   top: 0;
   right: 0;
   
+  width: 3rem;
   height: 3rem;
+  background-color: rgba(238, 62, 83, 0.3);
+
   display: flex;
-  width: 100%;
-  padding-right: 1rem;
+  margin-right: 1rem;
+  padding-right: 0.5rem;
+  border-radius: 0.25rem;
+
   justify-content: right;
   align-items: center;
   z-index: 100;
@@ -203,7 +270,7 @@ header {
   content: '';
   display: block;
   height: 3px;
-  width: 25px;
+  width: 2rem;
   border-radius: 3px;
   background-color: #ffffff;
   position: absolute;
@@ -255,7 +322,7 @@ header {
 }
 
 .menu-content ul {
-  padding: 2rem 1rem 0;
+  padding: 4rem 1rem 0;
 }
 
 ul.sub-menu {
@@ -277,10 +344,6 @@ ul .sub-menu li {
 
 ul .sub-menu li:last-child {
   border-bottom: none;
-}
-
-.menu-content ul li:hover {
-  background-color: #610d29;
 }
 
 .menu-content ul li a {
@@ -358,60 +421,64 @@ ul .sub-menu li:last-child {
   height: 100vh;
 }
 
-.slogan {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@media screen and (max-width:767px) {
+  .slogan {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-  width: 100%;
-}
-
-.slogan .logo,
-.slogan h3,
-.slogan p {
-  text-align: center;
-  color: whitesmoke;
-  text-shadow:
-    0px 0px 10px rgba(0, 0, 0, 1)
+    width: 100%;
   }
-  
-.slogan img {
-  filter:drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
+
+  .slogan .logo,
+  .slogan h3,
+  .slogan p {
+    text-align: center;
+    color: whitesmoke;
+    text-shadow:
+      0px 0px 10px rgba(0, 0, 0, 1)
+  }
+
+  .slogan img {
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 1));
+  }
+
+  .slogan .logo img {
+    height: 3.5rem;
+  }
+
+  .slogan .logo {
+    padding-right: 1.25rem;
+    font-size: 2rem;
+  }
+
+  .slogan h3 {
+    margin: 0.75rem 0rem 0.75rem;
+    padding-left: 0.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #fff;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .slogan p {
+    margin-top: 1.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.7;
+    letter-spacing: 0rem;
+  }
+
+  .slogan p:last-child {
+    margin-top: 0.5rem;
+  }
 }
 
-.slogan .logo img {
-  height: 3.5rem;
-}
 
-.slogan .logo {
-  padding-right: 1.25rem;
-  font-size: 2rem;
-}
-
-.slogan h3 {
-  margin: 0.75rem 0rem 0.75rem;
-  padding-left: 0.25rem;  
-  padding-bottom:0.5rem;
-  border-bottom: 1px solid #fff;
-  font-family: 'Shippori Mincho', serif;
-  font-weight: 400;
-  font-size: 3.5rem;
-  letter-spacing: 0.5rem;
-}
-
-.slogan p {
-  margin-top: 1.5rem;
-  font-family: 'Noto Sans JP', sans-serif;
-  line-height: 2;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0rem;
-}
-
-.slogan p:last-child {
-  margin-top: 1.5rem;
-}
 /**************** バナー ここまで ****************/
 
 

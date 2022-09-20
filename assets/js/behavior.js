@@ -1,7 +1,3 @@
-$(".openbtn1").click(function () {
-    $(this).toggleClass('active');
-});
-
 jQuery(function ($) {
     // $('.gallery').each(function () {
     //   $(this).modaal({
@@ -13,4 +9,14 @@ jQuery(function ($) {
         animation_speed: '1000',
         background: '#fff',
     });
+    
+    $('.modal').modaal({
+        type: 'inline',
+        animation_speed: '1000',
+        background: '#fff',
+    });
+});
+
+$(function () {
+    $('#js-slider-1').slick();
 });

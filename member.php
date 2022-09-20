@@ -24,7 +24,7 @@ if (!$_SESSION['email']) {
 </head>
 
 <body>
-  <header>
+  <div class="greeting">
     <div class="hp-only">
       <div class="hamburger-menu-container">
         <h1 class="logo">
@@ -88,8 +88,7 @@ if (!$_SESSION['email']) {
           <h3>ことばを残す</h3>
           <p>
             本当に残したい<br class="hp-only">
-            『ことば』を<br>
-            記録していきたいと<br class="hp-only">
+            『ことば』を記録していきたいと<br class="hp-only">
             思っているみなさんへ<br>
             WEB標準の技術を使い<br class="hp-only">
             『本』を手本にパッケージング</br>
@@ -103,7 +102,7 @@ if (!$_SESSION['email']) {
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
   <div class="container">
     <main>

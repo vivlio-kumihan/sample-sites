@@ -26,9 +26,12 @@ $images = glob('./assets/img/thumbnail/*.jpg');
   <link rel="stylesheet" href="./assets/css/ss-style.css" />
   <link rel="stylesheet" href="./assets/css/ss-style-pages-org.css" />
   <link rel="stylesheet" href="./assets/css/modaal.min.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
   <script src="./assets/js/modaal.min.js" defer></script>
-  <script src="./assets/js/behavior.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+  <script src="./assets/js/behavior.js" defer></script>
 </head>
 
 <body>
