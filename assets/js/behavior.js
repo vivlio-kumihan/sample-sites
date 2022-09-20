@@ -16,7 +16,3 @@ jQuery(function ($) {
         background: '#fff',
     });
 });
-
-$(function () {
-    $('#js-slider-1').slick();
-});
