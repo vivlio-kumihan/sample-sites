@@ -22,13 +22,13 @@
 .write-button button {
   width: 5rem;
   height: 2rem;
-  background-color: rgba(238, 62, 83, 0.7);
+  background-color: rgba(240, 60, 85, 1);
   border: none;
   border-radius: 0.25rem;
 }
 
 .write-button button:hover {
-  background-color: rgb(238, 62, 83);
+  background-color: rgba(240, 60, 85, 1);
   box-shadow: 1px 2px 3px #777;
 }
 
