@@ -1,0 +1,93 @@
+#container {
+  margin: 1.5rem auto;
+  /* width: 100%; */
+}
+
+#container h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/* .post-mesg {
+  padding: 0 1rem;
+} */
+
+.write-button {
+  margin: 0 1rem;
+  text-align: right;
+}
+
+.write-button button {
+  width: 5rem;
+  height: 2rem;
+  background-color: rgba(240, 60, 85, 1);
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.write-button button:hover {
+  background-color: rgba(240, 60, 85, 1);
+  box-shadow: 1px 2px 3px #777;
+}
+
+.write-button a {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+.receive {
+  padding: 0 1rem 0 2rem;
+}
+
+.BBS-input-form {
+  text-align: center;
+}
+
+.timeline {
+  margin-left: -1rem;
+  padding-left: 1rem;
+  border-left: 0.15rem solid hsl(0, 0%, 35%);
+  position: relative;
+  list-style: none;
+}
+
+.timeline .timeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timeline .timeline-item:after {
+  position: absolute;
+  display: block;
+  top: 0;
+  content: "";
+  background-color: rgba(230, 117, 117, 0.6);
+  top: 8px;
+  left: -1.45rem;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+}
+
+.user {
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgb(117, 16, 16);
+}
+
+/* bxslider */
+/* 枠線の削除 */
+.bx-wrapper {
+  background-color: transparent;
+  margin: 0px auto;
+  border: none;
+  box-shadow: none;
+}
+
+.bx-controls-direction {
+  display: none;
+}
