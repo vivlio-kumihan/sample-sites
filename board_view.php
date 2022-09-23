@@ -132,6 +132,8 @@ if (!$_SESSION['email']) {
       </ul>
     </div>
   </div>
+
+  <footer></footer>
 </body>
 
 </html>

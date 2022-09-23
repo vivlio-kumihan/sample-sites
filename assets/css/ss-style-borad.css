@@ -1,11 +1,12 @@
 #container {
-  width: 25rem;
-  margin: 0 auto;
+  margin: 1.5rem auto;
+  /* width: 100%; */
 }
 
 #container h1 {
+  margin-bottom: 1rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 900;
 }
 
@@ -36,8 +37,6 @@
   font-weight: 700;
   color: whitesmoke;
 }
-
-
 
 .receive {
   padding: 0 1rem 0 2rem;
@@ -78,4 +77,17 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: rgb(117, 16, 16);
+}
+
+/* bxslider */
+/* 枠線の削除 */
+.bx-wrapper {
+  background-color: transparent;
+  margin: 0px auto;
+  border: none;
+  box-shadow: none;
+}
+
+.bx-controls-direction {
+  display: none;
 }

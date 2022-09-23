@@ -104,7 +104,7 @@ if (!$_SESSION['email']) {
     </div>
   </div>
 
-  <div class="container">
+  <div class="index-container">
     <main>
       <section class="overview">
         <h2 class="h2-title">book</h2>

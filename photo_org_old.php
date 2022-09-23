@@ -26,16 +26,15 @@ $images = glob('./assets/img/thumbnail/*.jpg');
   <link rel="stylesheet" href="./assets/css/ss-style.css" />
   <link rel="stylesheet" href="./assets/css/ss-style-pages-org.css" />
   <link rel="stylesheet" href="./assets/css/modaal.min.css" />
-  <link rel="stylesheet" href="./assets/css/slick-theme.css">
-  <link rel="stylesheet" href="./assets/css/slick.css">
+  <link rel="stylesheet" href="./assets/css/jquery.bxslider.min.css">
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+  <script src="./assets/js/jquery.bxslider.min.js" defer></script>
   <script src="./assets/js/modaal.min.js" defer></script>
-  <script src="./assets/js/slick.min.js" defer></script>
   <script src="./assets/js/behavior.js" defer></script>
   <script>
-    $(function() {
-      $(".slider").slick();
+    $(document).ready(function() {
+      $('.slider').bxSlider();
     });
   </script>
 </head>
@@ -46,10 +45,11 @@ $images = glob('./assets/img/thumbnail/*.jpg');
 
   <div class="container">
     <div class="slider">
-      <div class="slider_item">①</div>
-      <div class="slider_item">②</div>
-      <div class="slider_item">③</div>
+      <div><img src="./assets/img/photo1.jpg" alt=""> </div>
+      <div><img src="./assets/img/photo2.jpg" alt=""> </div>
+      <div><img src="./assets/img/photo3.jpg" alt=""> </div>
     </div>
+    
     <button class="header-button"><span></span></button>
     <ul class="grid-photos">
       <?php foreach ($images as $photo) { ?>
@@ -67,7 +67,4 @@ $images = glob('./assets/img/thumbnail/*.jpg');
   <footer></footer>
 
   <aside></aside>
-
-  <!-- <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
 </body>

@@ -43,7 +43,7 @@ if ($_POST) {
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':password', $hashed_new_pw, PDO::PARAM_STR);
         $stmt->execute();
-        $report_mesg[] = "パスワードを変更しました。<br>一旦、ログアウト→再度ログインされますとご確認いただけます。<br>";
+        $report_mesg[] = "パスワードを変更しました。<br>一旦、ログアウト→再度ログインしてご確認ください。<br>";
         $complete = true;
       } else {
         $err_mesg[] = '入力されたパスワードは登録されたものと違います。';
@@ -90,8 +90,7 @@ if ($_POST) {
     <?php
       echo '<div class="report_mesg">';
       echo implode('<br>', $report_mesg);
-      echo '<a href="./logout.php">ログアウトへ</a>
-      <i class="fa-solid fa-arrow-right-to-bracket"></i>';
+      echo '<a href="./logout.php">ログアウトへ</a><i class="fa-solid fa-arrow-right-to-bracket"></i>';
       echo '</div>';
     ?>
 

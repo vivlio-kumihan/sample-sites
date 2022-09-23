@@ -13,6 +13,6 @@ jQuery(function ($) {
     $('.modal').modaal({
         type: 'inline',
         animation_speed: '1000',
-        background: '#fff',
+        background: '#000',
     });
 });
