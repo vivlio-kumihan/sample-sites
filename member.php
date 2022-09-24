@@ -155,7 +155,7 @@ if (!$_SESSION['email']) {
 
   <aside></aside>
 
-  <footer id="footer">
+  <footer id="footer-container">
     <ul class="footer-icons">
       <li><a href="https://twitter.com/vivlioKumihan"><i class="fa-brands fa-square-twitter"></i></a></li>
       <li><a href="https://github.com/vivlio-kumihan"><i class="fa-brands fa-square-github"></i></a></li>
@@ -167,8 +167,6 @@ if (!$_SESSION['email']) {
       <li>Design: <a href="https://kumihan.com">Nobuyuki Takahiro</a></li>
     </ul>
   </footer>
-
-  <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

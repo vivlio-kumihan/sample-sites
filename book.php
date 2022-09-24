@@ -15,17 +15,21 @@ if (!$_SESSION['email']) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>組版</title>
+  <title>本</title>
+
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
   <link rel="stylesheet" href="./assets/css/fonts.css" />
+  <link rel="stylesheet" href="./assets/css/modaal.min.css" />
+  <link rel="stylesheet" href="./assets/css/jquery.bxslider.min.css">
   <link rel="stylesheet" href="./assets/css/ss-style.css" />
   <link rel="stylesheet" href="./assets/css/ss-style-pages-org.css" />
   <link rel="stylesheet" href="./assets/css/ss-style-borad.css" />
-  <link rel="stylesheet" href="./assets/css/modaal.min.css" />
+
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous" defer></script>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="./assets/js/modaal.min.js" defer></script>
+  <script src="./assets/js/jquery.bxslider.min.js" defer></script>
   <script src="./assets/js/behavior.js" defer></script>
 </head>
 
@@ -85,9 +89,9 @@ if (!$_SESSION['email']) {
     </div>
   </header>
 
-  <div id="container">
-    <h1>Typesetting</h1>
-  </div>
+  <body>
+    <h3>book page</h3>
+  </body>
 
   <footer id="footer-container">
     <ul class="footer-icons">
