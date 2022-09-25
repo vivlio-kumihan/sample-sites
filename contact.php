@@ -211,66 +211,63 @@ if (!$_SESSION['email']) {
     </div>
   </header>
 
-  <div id="entrance">
-    <div class="entrance-form-wrapper">
-      <?php if ($err_mesg) { ?>
-        <?php
-        echo '<div class="alert">';
-        echo implode('<br>', $err_mesg);
-        echo '</div>';
-        ?>
-      <?php } ?>
+  <div class="entrance-form-wrapper">
+    <?php if ($err_mesg) { ?>
+      <?php
+      echo '<div class="alert">';
+      echo implode('<br>', $err_mesg);
+      echo '</div>';
+      ?>
+    <?php } ?>
 
-      <?php if ($toward === 'input') { ?>
-        <h1>contact</h1>
-        <form action="./contact.php" method="POST">
-          <div class="form-item">
-            <label for="email">発信者<i class="fa-solid fa-angles-right"></i><?php echo $full_name ?>&nbsp;様</label>
-            <!-- <input type="text" name="name" placeholder="お名前" value=""></input> -->
-          </div>
-          <div class="form-item">
-            <label for=" email">Email<i class="fa-solid fa-angles-right"></i><?php echo $_SESSION['email'] ?></label>
-            <!-- <input type="email" name="email" placeholder="Eメールアドレス" value=""></input> -->
-          </div>
-          <div class="form-item">
-            <!-- <label for="textarea"></label> -->
-            <textarea cols="40" rows="8" name="mesg" placeholder="お問い合せ内容"><?php echo $_SESSION['mesg'] ?></textarea>
-          </div>
-          <div class="button-panel">
-            <input type="submit" class="button" name="confirm" value="確認"></input>
-          </div>
-        </form>
-      <?php } elseif ($toward === 'confirm') { ?>
-        <form action="./contact.php" method="POST">
-          <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>">
-          <div class="form-item">
-            <label for="name">発信者<i class="fa-solid fa-angles-right"></i>&emsp;<?php echo $full_name ?>&nbsp;様</label>
-            <!-- <input type="text" name="name" placeholder="お名前" value=""></input> -->
-          </div>
-          <div class="form-item">
-            <label for="email">Email<i class="fa-solid fa-angles-right"></i>&emsp;<?php echo $_SESSION['email'] ?></label>
-            <!-- <input type="email" name="email" placeholder="Eメールアドレス" value=""></input> -->
-          </div>
-          <div class="form-item">
-            <label class="contact-form-confirm-mesg" for="mesg">お問合せ内容<br><?php echo nl2br($_SESSION['mesg']) ?></label>
-          </div>
-          <div class="button-panel">
-            <input type="submit" class="button" name="back" value="戻る"></input>
-            <input type="submit" class="button" name="send" value="送信"></input>
-          </div>
-        </form>
-      <?php } else { ?>
-        <div class="complete">
-          <i class="fa-regular fa-paper-plane"></i>
-          <p>お問合せありがとうございました。<br>確認のメールを送付しております。<br>担当から連絡を差し上げますので、今しばらくおまちください。</p>
+    <?php if ($toward === 'input') { ?>
+      <h1>contact</h1>
+      <form action="./contact.php" method="POST">
+        <div class="form-item">
+          <label for="email">発信者<i class="fa-solid fa-angles-right"></i><?php echo $full_name ?>&nbsp;様</label>
+          <!-- <input type="text" name="name" placeholder="お名前" value=""></input> -->
         </div>
-      <?php } ?>
-
-      <div class="form-footer">
-        <p><a href="./index.php">Back to HOME<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+        <div class="form-item">
+          <label for=" email">Email<i class="fa-solid fa-angles-right"></i><?php echo $_SESSION['email'] ?></label>
+          <!-- <input type="email" name="email" placeholder="Eメールアドレス" value=""></input> -->
+        </div>
+        <div class="form-item">
+          <!-- <label for="textarea"></label> -->
+          <textarea cols="40" rows="8" name="mesg" placeholder="お問い合せ内容"><?php echo $_SESSION['mesg'] ?></textarea>
+        </div>
+        <div class="button-panel">
+          <input type="submit" class="button" name="confirm" value="確認"></input>
+        </div>
+      </form>
+    <?php } elseif ($toward === 'confirm') { ?>
+      <form action="./contact.php" method="POST">
+        <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>">
+        <div class="form-item">
+          <label for="name">発信者<i class="fa-solid fa-angles-right"></i>&emsp;<?php echo $full_name ?>&nbsp;様</label>
+          <!-- <input type="text" name="name" placeholder="お名前" value=""></input> -->
+        </div>
+        <div class="form-item">
+          <label for="email">Email<i class="fa-solid fa-angles-right"></i>&emsp;<?php echo $_SESSION['email'] ?></label>
+          <!-- <input type="email" name="email" placeholder="Eメールアドレス" value=""></input> -->
+        </div>
+        <div class="form-item">
+          <label class="contact-form-confirm-mesg" for="mesg">お問合せ内容<br><?php echo nl2br($_SESSION['mesg']) ?></label>
+        </div>
+        <div class="button-panel">
+          <input type="submit" class="button" name="back" value="戻る"></input>
+          <input type="submit" class="button" name="send" value="送信"></input>
+        </div>
+      </form>
+    <?php } else { ?>
+      <div class="complete">
+        <i class="fa-regular fa-paper-plane"></i>
+        <p>お問合せありがとうございました。<br>確認のメールを送付しております。<br>担当から連絡を差し上げますので、今しばらくおまちください。</p>
       </div>
-    </div>
-    <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
+    <?php } ?>
+  </div>
+  
+  <footer>
+  </footer>
 </body>
 
 </html>

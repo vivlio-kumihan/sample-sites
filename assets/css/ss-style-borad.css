@@ -93,7 +93,6 @@
   box-shadow: none;
 }
 
-
 @media screen and (min-width: 768px) {
   .bx-wrapper {
     margin: 1.5rem auto 3rem;
@@ -103,4 +102,10 @@
 
 .bx-controls-direction {
   display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .modaal-container {
+    width: 40rem;
+  }
 }

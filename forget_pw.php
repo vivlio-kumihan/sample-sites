@@ -72,7 +72,7 @@ if ($_POST) {
   <link rel="stylesheet" href="./assets/css/ss-style.css" />
 </head>
 
-<body id="entrance"">
+<body>
   <main class=" entrance-form-wrapper">
   <?php if ($err_mesg) { ?>
     <?php
@@ -105,9 +105,11 @@ if ($_POST) {
       </div>
     </form>
     <div class="form-footer">
+      <p><a href="./index.php">ホームへ戻る<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
     </div>
   <?php } ?>
   </main>
+  
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>
 

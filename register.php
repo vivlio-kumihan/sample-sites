@@ -155,7 +155,7 @@ if ($_POST) {
       </div>
     </form>
     <div class="form-footer">
-      <p><a href="./index.php">Back to HOME<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+      <p><a href="./index.php">ホームへ戻る<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
     </div>
   </div>
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>

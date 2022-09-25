@@ -71,33 +71,33 @@ if ($_POST) {
 
 <body id="entrance">
   <main class="entrance-form-wrapper">
-  <?php if ($err_mesg) { ?>
-    <?php
-    echo '<div class="alert">';
-    echo implode('<br>', $err_mesg);
-    echo '</div>';
-    ?>
-  <?php } ?>
-  
-  <h1>log in</h1>
-  <form action="./login.php" method="POST">
-    <div class="form-item">
-      <!-- <label for="email"></label> -->
-      <input type="email" name="email" placeholder="Eメールアドレス" value="<?php echo forxss($_POST['email']) ?>"></input>
+    <?php if ($err_mesg) { ?>
+      <?php
+      echo '<div class="alert">';
+      echo implode('<br>', $err_mesg);
+      echo '</div>';
+      ?>
+    <?php } ?>
+    
+    <h1>log in</h1>
+    <form action="./login.php" method="POST">
+      <div class="form-item">
+        <!-- <label for="email"></label> -->
+        <input type="email" name="email" placeholder="Eメールアドレス" value="<?php echo forxss($_POST['email']) ?>"></input>
+      </div>
+      <div class="form-item">
+        <!-- <label for="password"></label> -->
+        <input type="password" name="password" placeholder="パスワード"></input>
+      </div>
+      <div class="button-panel">
+        <input type="submit" class="button" value="ログイン"></input>
+      </div>
+    </form>
+    <div class="form-footer">
+      <p><a href="./index.php">ホームへ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+      <p><a href="./register.php">メンバー登録へ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+      <p><a href="./forget_pw.php">パスワードを忘れた方はこちらから<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
     </div>
-    <div class="form-item">
-      <!-- <label for="password"></label> -->
-      <input type="password" name="password" placeholder="パスワード"></input>
-    </div>
-    <div class="button-panel">
-      <input type="submit" class="button" value="ログイン"></input>
-    </div>
-  </form>
-  <div class="form-footer">
-    <p><a href="./index.php">ホームへ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
-    <p><a href="./register.php">メンバー登録へ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
-    <p><a href="./forget_pw.php">パスワードを忘れた方はこちらから<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
-  </div>
   </main>
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>

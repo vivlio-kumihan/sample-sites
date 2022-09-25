@@ -341,7 +341,7 @@ ul.sub-menu li:first-child {
 }
 
 ul .sub-menu li {
-  padding-left: 2rem;
+  padding: 0 2rem;
   border-bottom: 1px dotted #ffffff;
 }
 
@@ -494,18 +494,30 @@ ul .sub-menu li:last-child {
   background: #fafafa;
   margin: 0 auto;
   padding: 2rem 1rem 1rem;
-  /* max-width: 370px; */
-  height: 100vh;
+  max-width: 390px;
+}
+
+@media screen and (min-width:768px) {
+  .entrance-form-wrapper {
+    max-width: 570px;
+  }
 }
 
 .entrance-form-wrapper h1 {
   text-align: center;
-  padding: 1em 0;
+  padding-bottom: 0.75rem;
   font-family: 'Anton', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   color: #777;
+}
+
+@media screen and (min-width:768px) {
+  .entrance-form-wrapper h1 {
+    padding: 0.5rem 0 1rem;
+    font-size: 2rem;
+  }
 }
 
 .entrance-form-wrapper h3 {
@@ -563,6 +575,12 @@ ul .sub-menu li:last-child {
   font-size: 1.05rem;
   border: 1px solid #fd1933;
   border-radius: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .form-item textarea{
+    width: 37rem;
+  }
 }
 
 .form-item textarea:focus {
