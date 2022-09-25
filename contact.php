@@ -139,7 +139,7 @@ if (!$_SESSION['email']) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>掲示板</title>
+  <title>お問合せ</title>
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
   <link rel="stylesheet" href="./assets/css/fonts.css" />
@@ -167,6 +167,7 @@ if (!$_SESSION['email']) {
           <label for="menu-btn-check" id="nav-black"></label>
           <div class="menu-content">
             <ul>
+              <li><a href="./index.php">ホーム</a></li>
               <li><a href="./book.html">本</a></li>
               <li><a href="./typesetting.php">組版</a></li>
               <li><a href="./programming.php">プログラミング</a></li>
@@ -192,6 +193,7 @@ if (!$_SESSION['email']) {
           <span>kumihan.com</span>
         </h1>
         <ul class="menu-bar-lists">
+          <li class="menu-bar-item"><a href="./index.php">ホーム</a></li>
           <li class="menu-bar-item"><a href="./book.html">本</a></li>
           <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li>
           <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li>
@@ -263,12 +265,12 @@ if (!$_SESSION['email']) {
           <p>お問合せありがとうございました。<br>確認のメールを送付しております。<br>担当から連絡を差し上げますので、今しばらくおまちください。</p>
         </div>
       <?php } ?>
-        
+
       <div class="form-footer">
         <p><a href="./index.php">Back to HOME<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
       </div>
     </div>
     <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
-  </body>
+</body>
 
-  </html>
+</html>

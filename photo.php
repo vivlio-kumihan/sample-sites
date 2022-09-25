@@ -35,7 +35,12 @@ $images = glob('./assets/img/thumbnail/*.jpg');
   <script src="./assets/js/behavior.js" defer></script>
   <script>
     $(document).ready(function() {
-      $('.slider').bxSlider();
+      $('.slider').bxSlider({
+        auto: true,
+        mode: 'fade',
+        speed: 2000,
+        pager: false,
+      });
     });
   </script>
 </head>
@@ -54,7 +59,8 @@ $images = glob('./assets/img/thumbnail/*.jpg');
           <label for="menu-btn-check" id="nav-black"></label>
           <div class="menu-content">
             <ul>
-              <li><a href="./book.html">本</a></li>
+              <li><a href="./index.php">ホーム</a></li>
+              <li><a href="./book.php">本</a></li>
               <li><a href="./typesetting.php">組版</a></li>
               <li><a href="./programming.php">プログラミング</a></li>
               <li><a href="./photo.php">写真</a></li>
@@ -79,7 +85,8 @@ $images = glob('./assets/img/thumbnail/*.jpg');
           <span>kumihan.com</span>
         </h1>
         <ul class="menu-bar-lists">
-          <li class="menu-bar-item"><a href="./book.html">本</a></li>
+          <li class="menu-bar-item"><a href="./index.php">ホーム</a></li>
+          <li class="menu-bar-item"><a href="./book.php">本</a></li>
           <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li>
           <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li>
           <li class="menu-bar-item"><a href="./photo.php">写真</a></li>
@@ -99,25 +106,28 @@ $images = glob('./assets/img/thumbnail/*.jpg');
   <div id="container">
     <h1>Photography</h1>
 
+  <div class="photos-container">
     <div class="slider">
-      <div><img src="./assets/img/photo1.jpg" alt=""> </div>
-      <div><img src="./assets/img/photo2.jpg" alt=""> </div>
-      <div><img src="./assets/img/photo3.jpg" alt=""> </div>
+      <?php foreach ($images as $photo) {
+        $path_to_view_photo = './assets/img/album/' . basename($photo);
+      ?>
+        <div><?php echo '<img src="', $path_to_view_photo, '">'; ?></div>
+      <?php } ?>
     </div>
 
-    <button class="header-button"><span></span></button>
     <ul class="grid-photos">
       <?php foreach ($images as $photo) { ?>
         <?php
-        $path_to_thumbnail = './assets/img/thumbnail/' . basename($photo);
-        $path_to_view_photo = './assets/img/album/' . basename($photo);
+          $path_to_thumbnail = './assets/img/thumbnail/' . basename($photo);
+          $path_to_view_photo = './assets/img/album/' . basename($photo);
         ?>
         <?php echo '<a class="view-photo" href="', $path_to_view_photo, '" data-group="gallery" class="gallery">' ?>
-        <?php echo '<li><img class="thumbnail-photo" src="', $path_to_thumbnail, '" alt="thumbnail"></li>'; ?>
+          <?php echo '<li><img class="thumbnail-photo" src="', $path_to_thumbnail, '" alt="thumbnail"></li>'; ?>
         </a>
       <?php } ?>
     </ul>
   </div>
+
   <footer id="footer-container">
     <ul class="footer-icons">
       <li><a href="https://twitter.com/vivlioKumihan"><i class="fa-brands fa-square-twitter"></i></a></li>

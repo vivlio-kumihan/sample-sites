@@ -62,7 +62,7 @@ if ($_POST) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login</title>
+  <title>ログイン</title>
   <link rel="stylesheet" href="./assets/css/reset.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/fonts.css" />
@@ -94,7 +94,8 @@ if ($_POST) {
     </div>
   </form>
   <div class="form-footer">
-    <p><a href="./register.php">メンバー登録はこちらから<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+    <p><a href="./index.php">ホームへ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+    <p><a href="./register.php">メンバー登録へ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
     <p><a href="./forget_pw.php">パスワードを忘れた方はこちらから<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
   </div>
   </main>

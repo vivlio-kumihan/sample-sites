@@ -6,12 +6,14 @@ jQuery(function ($) {
     // });
     $('.gallery').modaal({
         type: 'image',
+        animation: 'fade',
         animation_speed: '1000',
-        background: '#fff',
+        background: '#000',
     });
     
     $('.modal').modaal({
         type: 'inline',
+        animation: 'fade',
         animation_speed: '1000',
         background: '#000',
     });
