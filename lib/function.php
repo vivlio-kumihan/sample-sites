@@ -88,11 +88,11 @@ function get_db_connect() {
 
 // オプション名とインスタンスを定着させるのに都度変更を加える必要はある。
 // DBにデータを追記していくフォーマットとしては使える。
-function insert_comment($dbh, $name, $comment) {
+function insert_comment($dbh, $full_name, $comment) {
   $date = date('Y-m-d H:i:s');
-  $sql = "INSERT INTO board (name, comment, created) VALUE (:name, :comment, '{$date}')";
+  $sql = "INSERT INTO board (full_name, comment, created) VALUE (:full_name, :comment, '{$date}')";
   $stmt = $dbh->prepare($sql);
-  $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+  $stmt->bindValue(':full_name', $full_name, PDO::PARAM_STR);
   $stmt->bindValue(':comment', $comment, PDO::PARAM_STR);
   if (!$stmt->execute()) {
     return 'データの書き込みに失敗しました。';
@@ -101,7 +101,7 @@ function insert_comment($dbh, $name, $comment) {
 
 function all_select_comments($dbh) {
   $data = [];
-  $sql = "SELECT name, comment, created FROM board";
+  $sql = "SELECT full_name, comment, created FROM board";
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
   // 凄いよね、fetch()。

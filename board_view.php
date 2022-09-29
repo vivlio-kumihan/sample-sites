@@ -90,6 +90,7 @@ if (!$_SESSION['email']) {
   <main class="entrance-form-wrapper">
 
     <h1>BBS</h1>
+    <?php echo $full_name ?>
 
     <?php
     if ($err_mesg) {
@@ -108,7 +109,7 @@ if (!$_SESSION['email']) {
         <!-- 書き込み -->
         <form action="./board.php" method="POST">
           <div class="form-item">
-            <input type="text" name="name" placeholder="名前" value="<?php echo forxss($_POST['name']) ?>"></input>
+            <label for="name">投稿者<i class="fa-solid fa-angles-right"></i>&emsp;<?php echo $full_name ?></label>
           </div>
           <div class="form-item">
             <textarea cols="30" rows="15" name="comment" placeholder="投稿"></textarea>
@@ -126,7 +127,7 @@ if (!$_SESSION['email']) {
         <?php if (count($data)) { ?>
           <?php foreach (array_reverse($data) as $row) { ?>
             <li class="timeline-item">
-              <div class="user"><?php echo forxss($row['name']); ?></div>
+              <div class="user"><?php echo forxss($row['full_name']); ?></div>
               <p><?php echo $row['created']; ?></p>
               <p><?php echo nl2br(forxss($row['comment'])); ?></p>
             </li>

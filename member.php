@@ -62,8 +62,8 @@ $images = glob('./assets/img/thumbnail/*.jpg');
               <li><a href="./index.php">ホーム</a></li>
               <li><a href="./book.php">本</a></li>
               <li><a href="./typesetting.php">組版</a></li>
-              <li><a href="./programming.php">プログラミング</a></li>
               <li><a href="./photo.php">写真</a></li>
+              <li><a href="./programming.php">プログラミング</a></li>
               <li><a class="sub-menu" href="./member.php">メンバーページ</a>
                 <ul class="sub-menu">
                   <li><a href="./register.php">sign up</a></li>

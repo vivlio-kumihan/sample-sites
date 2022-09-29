@@ -164,7 +164,7 @@
 
   <aside></aside>
 
-  <footer id="footer">
+  <footer id="footer-container">
     <ul class="footer-icons">
       <li><a href="https://twitter.com/vivlioKumihan"><i class="fa-brands fa-square-twitter"></i></a></li>
       <li><a href="https://github.com/vivlio-kumihan"><i class="fa-brands fa-square-github"></i></a></li>
