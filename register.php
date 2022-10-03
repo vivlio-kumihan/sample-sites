@@ -20,7 +20,7 @@ if ($_POST) {
     $err_mesg[] = '名前を入力してください。';
   } elseif ($last_name && $first_name) {
     try {
-      $sql = "SELECT COUNT(id) FROM `sample-sites` WHERE `last_name` = :last_name AND `first_name` = :first_name";
+      $sql = "SELECT COUNT(id) FROM `member` WHERE `last_name` = :last_name AND `first_name` = :first_name";
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
       $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
@@ -45,7 +45,7 @@ if ($_POST) {
     $err_mesg[] = '入力されたEメールアドレスは不正です。';
   } elseif ($email) {
     try {
-      $sql = "SELECT COUNT(id) FROM `sample-sites` WHERE `email` = :email";
+      $sql = "SELECT COUNT(id) FROM `member` WHERE `email` = :email";
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(':email', $email, PDO::PARAM_STR);
       $stmt->execute();
@@ -80,7 +80,7 @@ if ($_POST) {
   if (!$err_mesg) {
     try {
       $date = date('Y-m-d H:i:s');
-      $sql = "INSERT INTO `sample-sites`(`last_name`, `first_name`, `email`, `password`, `created`) VALUES (:last_name, :first_name, :email, :password, '$date')";
+      $sql = "INSERT INTO `member`(`last_name`, `first_name`, `email`, `password`, `created`) VALUES (:last_name, :first_name, :email, :password, '$date')";
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
       $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
@@ -155,7 +155,7 @@ if ($_POST) {
       </div>
     </form>
     <div class="form-footer">
-      <p><a href="./index.php">ホームへ戻る<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+      <p><a href="https://barba.rossa.cc/">ホームへ戻る<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
     </div>
   </div>
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>

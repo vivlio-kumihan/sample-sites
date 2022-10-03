@@ -45,7 +45,7 @@
           <div class="menu-content">
             <ul>
               <li><a href="./index.php">ホーム</a></li>
-              <li><a href="./book.php">本</a></li>
+              <li><a href="./book.html">本</a></li>
               <li><a href="./typesetting.php">組版</a></li>
               <li><a href="./programming.php">プログラミング</a></li>
               <li><a href="./photo.php">写真</a></li>
@@ -71,7 +71,7 @@
         </h1>
         <ul class="menu-bar-lists">
           <li class="menu-bar-item"><a href="./index.php">ホーム</a></li>
-          <li class="menu-bar-item"><a href="./book.php">本</a></li>
+          <li class="menu-bar-item"><a href="./book.html">本</a></li>
           <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li>
           <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li>
           <li class="menu-bar-item"><a href="./photo.php">写真</a></li>
@@ -136,7 +136,7 @@
             <i class="fa-solid fa-book"></i>
             <h4>本</h4>
             <p>エリザベス女王の国葬には、バイデン米大統領やドイツのシュタインマイヤー大統領らが参列する予定だ。政府内では「英国で弔問外交を展開する必要がある」（官邸筋）として、首相も訪英を検討すべきだとの意見も出ていた。</p>
-            <p class="readmore"><a href="./book.php">関連ページへ</a></p>
+            <p class="readmore"><a href="./book.html">関連ページへ</a></p>
           </li>
           <li class="type-of-thing">
             <i class="fa-solid fa-scroll"></i>

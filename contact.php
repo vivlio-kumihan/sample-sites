@@ -24,7 +24,7 @@ if (!$_SESSION['email']) {
 } else {
   $dbh = get_db_connect();
   try {
-    $sql = "SELECT * FROM `sample-sites` WHERE `email` = :email LIMIT 1";
+    $sql = "SELECT * FROM `member` WHERE `email` = :email LIMIT 1";
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':email', $_SESSION['email'], PDO::PARAM_STR);
     $stmt->execute();
@@ -121,17 +121,6 @@ if (isset($_POST['back']) && $_POST['back']) {
 }
 ?>
 
-
-<?php
-session_start();
-if (!$_SESSION['email']) {
-  $host = $_SERVER['HTTP_HOST'];
-  $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-  header("Location: //$host$uri/login.php");
-  exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -167,10 +156,14 @@ if (!$_SESSION['email']) {
           <label for="menu-btn-check" id="nav-black"></label>
           <div class="menu-content">
             <ul>
-              <li><a href="./index.php">ホーム</a></li>
-              <li><a href="./book.html">本</a></li>
-              <li><a href="./typesetting.php">組版</a></li>
-              <li><a href="./programming.php">プログラミング</a></li>
+              <!-- <li><a href="./index.php">ホーム</a></li> -->
+              <li><a href="https://barba.rossa.cc/">ホーム</a></li>
+              <li><a href="./book.php">本</a></li>
+              <!-- <li><a href="https://barba.rossa.cc/book/">本</a></li> -->
+              <!-- <li><a href="./typesetting.php">組版</a></li> -->
+              <li><a href="https://barba.rossa.cc/typesetting/">組版</a></li>
+              <!-- <li><a href="./programming.php">プログラミング</a></li> -->
+              <li><a href="https://barba.rossa.cc/programming/">プログラミング</a></li>
               <li><a href="./photo.php">写真</a></li>
               <li><a class="sub-menu" href="./member.php">メンバーページ</a>
                 <ul class="sub-menu">
@@ -193,10 +186,14 @@ if (!$_SESSION['email']) {
           <span>kumihan.com</span>
         </h1>
         <ul class="menu-bar-lists">
-          <li class="menu-bar-item"><a href="./index.php">ホーム</a></li>
-          <li class="menu-bar-item"><a href="./book.html">本</a></li>
-          <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li>
-          <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li>
+          <!-- <li class="menu-bar-item"><a href="./index.php">ホーム</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/">ホーム</a></li>
+          <li class="menu-bar-item"><a href="./book.php">本</a></li>
+          <!-- <li class="menu-bar-item"><a href="https://barba.rossa.cc/book/">本</a></li> -->
+          <!-- <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/typesetting/">組版</a></li>
+          <!-- <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/programming/">プログラミング</a></li>
           <li class="menu-bar-item"><a href="./photo.php">写真</a></li>
           <li class="menu-bar-item"><a href="./member.php">メンバーページ</a>
             <ul class="sub-menu">
@@ -239,6 +236,8 @@ if (!$_SESSION['email']) {
           <input type="submit" class="button" name="confirm" value="確認"></input>
         </div>
       </form>
+
+
     <?php } elseif ($toward === 'confirm') { ?>
       <form action="./contact.php" method="POST">
         <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?>">
@@ -265,8 +264,11 @@ if (!$_SESSION['email']) {
       </div>
     <?php } ?>
   </div>
-  
   <footer>
+    <div class="form-footer">
+      <p><a href="./member.php">メンバーページに戻る<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+      <p><a href="https://barba.rossa.cc/">ホームへ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+    </div>
   </footer>
 </body>
 

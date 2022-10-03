@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+html {
+  font-size: 14Q;
+}
+
+header {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+i {
+  font-style: normal;
+}
+
+.readmore {
+  display: none;
+}
+
+@page {
+  size: A4;
+  margin:12mm 35mm;
+}
+
+#container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contents-header {
+  margin-bottom: 0rem;
+}
+
+#container h1 {
+  margin-bottom: 2rem;
+}
+
+.overview {
+  margin-top: 0rem;
+}
+
+p, .contents-header p {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 400;
+  line-height: 6mm;
+}
+
+.contents-header p {
+  padding: 0 1rem;  
+}
+
+.overview-flex-box {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overview-flex-box .figure {
+  position: relative;
+  display: block;
+  background-color: antiquewhite;
+  height: 72mm;
+  width: 20rem;
+}
+.overview-flex-box img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%); 
+}
+.overview-flex-box p {
+  width: 17rem;
+}
+
+.cando {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.type-of-thing {
+  flex: 40%;
+  margin: 0.5rem;
+}
+
+.cando p {
+  font-size: 0.8rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+}

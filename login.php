@@ -10,14 +10,14 @@ if ($_POST) {
   $email = get_post('email');
   $password = get_post('password');
 
-  
+
   // for email
   if (!$email || mb_strlen($email) > 100) {
     $err_mesg[] = 'Eメールアドレスを確認してください。';
   } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $err_mesg[] = '入力されたEメールアドレスは不正です。';
   }
-  
+
   // for password
   if (!$password || mb_strlen($password) > 17) {
     $err_mesg[] = 'パスワードを入力してください。';
@@ -26,7 +26,7 @@ if ($_POST) {
   $dbh = get_db_connect();
 
   try {
-    $sql = "SELECT * FROM `sample-sites` WHERE `email` = :email LIMIT 1";
+    $sql = "SELECT * FROM `member` WHERE `email` = :email LIMIT 1";
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
@@ -78,7 +78,7 @@ if ($_POST) {
       echo '</div>';
       ?>
     <?php } ?>
-    
+
     <h1>log in</h1>
     <form action="./login.php" method="POST">
       <div class="form-item">
@@ -94,7 +94,7 @@ if ($_POST) {
       </div>
     </form>
     <div class="form-footer">
-      <p><a href="./index.php">ホームへ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+      <p><a href="https://barba.rossa.cc/">ホームへ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
       <p><a href="./register.php">メンバー登録へ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
       <p><a href="./forget_pw.php">パスワードを忘れた方はこちらから<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
     </div>

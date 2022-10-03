@@ -43,10 +43,14 @@ if (!$_SESSION['email']) {
           <label for="menu-btn-check" id="nav-black"></label>
           <div class="menu-content">
             <ul>
-              <li><a href="./index.php">ホーム</a></li>
+              <!-- <li><a href="./index.php">ホーム</a></li> -->
+              <li><a href="https://barba.rossa.cc/">ホーム</a></li>
               <li><a href="./book.php">本</a></li>
-              <li><a href="./typesetting.php">組版</a></li>
-              <li><a href="./programming.php">プログラミング</a></li>
+              <!-- <li><a href="https://barba.rossa.cc/book/">本</a></li> -->
+              <!-- <li><a href="./typesetting.php">組版</a></li> -->
+              <li><a href="https://barba.rossa.cc/typesetting/">組版</a></li>
+              <!-- <li><a href="./programming.php">プログラミング</a></li> -->
+              <li><a href="https://barba.rossa.cc/programming/">プログラミング</a></li>
               <li><a href="./photo.php">写真</a></li>
               <li><a class="sub-menu" href="./member.php">メンバーページ</a>
                 <ul class="sub-menu">
@@ -69,10 +73,14 @@ if (!$_SESSION['email']) {
           <span>kumihan.com</span>
         </h1>
         <ul class="menu-bar-lists">
-          <li class="menu-bar-item"><a href="./index.php">ホーム</a></li>
+          <!-- <li class="menu-bar-item"><a href="./index.php">ホーム</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/">ホーム</a></li>
           <li class="menu-bar-item"><a href="./book.php">本</a></li>
-          <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li>
-          <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li>
+          <!-- <li class="menu-bar-item"><a href="https://barba.rossa.cc/book/">本</a></li> -->
+          <!-- <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/typesetting/">組版</a></li>
+          <!-- <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/programming/">プログラミング</a></li>
           <li class="menu-bar-item"><a href="./photo.php">写真</a></li>
           <li class="menu-bar-item"><a href="./member.php">メンバーページ</a>
             <ul class="sub-menu">

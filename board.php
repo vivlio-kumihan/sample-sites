@@ -18,7 +18,7 @@ if (!$_SESSION['email']) {
   $data = array();
   $err_mesg = array();
   try {
-    $sql = "SELECT * FROM `sample-sites` WHERE `email` = :email LIMIT 1";
+    $sql = "SELECT * FROM `member` WHERE `email` = :email LIMIT 1";
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':email', $_SESSION['email'], PDO::PARAM_STR);
     $stmt->execute();

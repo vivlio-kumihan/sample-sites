@@ -714,3 +714,15 @@ ul .sub-menu li:last-child {
   color: #555;
   text-decoration: none;
 }
+
+.to_Viliostyle {
+  margin-top: 2rem;
+}
+
+.to_Viliostyle a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #555;
+  font-weight: 700;
+}

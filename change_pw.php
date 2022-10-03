@@ -30,7 +30,7 @@ if ($_POST) {
   $dbh = get_db_connect();
   
   try {
-    $sql = "SELECT * FROM `sample-sites` WHERE `email` = :email LIMIT 1";
+    $sql = "SELECT * FROM `member` WHERE `email` = :email LIMIT 1";
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':email', $_SESSION['email'], PDO::PARAM_STR);
     $stmt->execute();
@@ -39,7 +39,7 @@ if ($_POST) {
       // 新しいパスワードのハッシュ値を生成させて初期化する。
       $hashed_new_pw = password_hash($new_password, PASSWORD_DEFAULT);
       if (password_verify($password, $profile['password'])) {
-        $sql = "UPDATE `sample-sites` SET `password` = :password WHERE {$profile['id']}";
+        $sql = "UPDATE `member` SET `password` = :password WHERE {$profile['id']}";
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue(':password', $hashed_new_pw, PDO::PARAM_STR);
         $stmt->execute();

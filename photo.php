@@ -59,10 +59,14 @@ $images = glob('./assets/img/thumbnail/*.jpg');
           <label for="menu-btn-check" id="nav-black"></label>
           <div class="menu-content">
             <ul>
-              <li><a href="./index.php">ホーム</a></li>
+              <!-- <li><a href="./index.php">ホーム</a></li> -->
+              <li><a href="https://barba.rossa.cc/">ホーム</a></li>
               <li><a href="./book.php">本</a></li>
-              <li><a href="./typesetting.php">組版</a></li>
-              <li><a href="./programming.php">プログラミング</a></li>
+              <!-- <li><a href="https://barba.rossa.cc/book/">本</a></li> -->
+              <!-- <li><a href="./typesetting.php">組版</a></li> -->
+              <li><a href="https://barba.rossa.cc/typesetting/">組版</a></li>
+              <!-- <li><a href="./programming.php">プログラミング</a></li> -->
+              <li><a href="https://barba.rossa.cc/programming/">プログラミング</a></li>
               <li><a href="./photo.php">写真</a></li>
               <li><a class="sub-menu" href="./member.php">メンバーページ</a>
                 <ul class="sub-menu">
@@ -85,10 +89,14 @@ $images = glob('./assets/img/thumbnail/*.jpg');
           <span>kumihan.com</span>
         </h1>
         <ul class="menu-bar-lists">
-          <li class="menu-bar-item"><a href="./index.php">ホーム</a></li>
+          <!-- <li class="menu-bar-item"><a href="./index.php">ホーム</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/">ホーム</a></li>
           <li class="menu-bar-item"><a href="./book.php">本</a></li>
-          <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li>
-          <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li>
+          <!-- <li class="menu-bar-item"><a href="https://barba.rossa.cc/book/">本</a></li> -->
+          <!-- <li class="menu-bar-item"><a href="./typesetting.php">組版</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/typesetting/">組版</a></li>
+          <!-- <li class="menu-bar-item"><a href="./programming.php">プログラミング</a></li> -->
+          <li class="menu-bar-item"><a href="https://barba.rossa.cc/programming/">プログラミング</a></li>
           <li class="menu-bar-item"><a href="./photo.php">写真</a></li>
           <li class="menu-bar-item"><a href="./member.php">メンバーページ</a>
             <ul class="sub-menu">
@@ -106,40 +114,40 @@ $images = glob('./assets/img/thumbnail/*.jpg');
   <div id="container">
     <h1>Photography</h1>
 
-  <div class="photos-container">
-    <div class="slider">
-      <?php foreach ($images as $photo) {
-        $path_to_view_photo = './assets/img/album/' . basename($photo);
-      ?>
-        <div><?php echo '<img src="', $path_to_view_photo, '">'; ?></div>
-      <?php } ?>
-    </div>
-
-    <ul class="grid-photos">
-      <?php foreach ($images as $photo) { ?>
-        <?php
-          $path_to_thumbnail = './assets/img/thumbnail/' . basename($photo);
+    <div class="photos-container">
+      <div class="slider">
+        <?php foreach ($images as $photo) {
           $path_to_view_photo = './assets/img/album/' . basename($photo);
         ?>
-        <?php echo '<a class="view-photo" href="', $path_to_view_photo, '" data-group="gallery" class="gallery">' ?>
-          <?php echo '<li><img class="thumbnail-photo" src="', $path_to_thumbnail, '" alt="thumbnail"></li>'; ?>
-        </a>
-      <?php } ?>
-    </ul>
-  </div>
+          <div><?php echo '<img src="', $path_to_view_photo, '">'; ?></div>
+        <?php } ?>
+      </div>
 
-  <footer id="footer-container">
-    <ul class="footer-icons">
-      <li><a href="https://twitter.com/vivlioKumihan"><i class="fa-brands fa-square-twitter"></i></a></li>
-      <li><a href="https://github.com/vivlio-kumihan"><i class="fa-brands fa-square-github"></i></a></li>
-      <li><a href="https://facebook.com/vivlioKumihan"><i class="fa-brands fa-square-facebook"></i></a></li>
-      <li><a href="#"><i class="fa-brands fa-slack"></i></a></li>
-    </ul>
-    <ul class="footer-copyright">
-      <li>&copy; kumihan.com</li>
-      <li>Design: <a href="https://kumihan.com">Nobuyuki Takahiro</a></li>
-    </ul>
-  </footer>
+      <ul class="grid-photos">
+        <?php foreach ($images as $photo) { ?>
+          <?php
+          $path_to_thumbnail = './assets/img/thumbnail/' . basename($photo);
+          $path_to_view_photo = './assets/img/album/' . basename($photo);
+          ?>
+          <?php echo '<a class="view-photo" href="', $path_to_view_photo, '" data-group="gallery" class="gallery">' ?>
+          <?php echo '<li><img class="thumbnail-photo" src="', $path_to_thumbnail, '" alt="thumbnail"></li>'; ?>
+          </a>
+        <?php } ?>
+      </ul>
+    </div>
+
+    <footer id="footer-container">
+      <ul class="footer-icons">
+        <li><a href="https://twitter.com/vivlioKumihan"><i class="fa-brands fa-square-twitter"></i></a></li>
+        <li><a href="https://github.com/vivlio-kumihan"><i class="fa-brands fa-square-github"></i></a></li>
+        <li><a href="https://facebook.com/vivlioKumihan"><i class="fa-brands fa-square-facebook"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-slack"></i></a></li>
+      </ul>
+      <ul class="footer-copyright">
+        <li>&copy; kumihan.com</li>
+        <li>Design: <a href="https://kumihan.com">Nobuyuki Takahiro</a></li>
+      </ul>
+    </footer>
 </body>
 
 </html>

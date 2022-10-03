@@ -19,7 +19,7 @@ if ($_POST) {
   $dbh = get_db_connect();
 
   try {
-    $sql = "SELECT * FROM `sample-sites` WHERE `email` = :email LIMIT 1";
+    $sql = "SELECT * FROM `member` WHERE `email` = :email LIMIT 1";
     $stmt = $dbh->prepare($sql);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
@@ -36,7 +36,7 @@ if ($_POST) {
       // パスワードハッシュをかける。
       $hashed_tmp_pw = password_hash($tmp_pw, PASSWORD_DEFAULT);
       // 該当のデータをアップデートする。
-      $sql = "UPDATE `sample-sites` SET `password` = :password WHERE {$profile['id']}";
+      $sql = "UPDATE `member` SET `password` = :password WHERE {$profile['id']}";
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(':password', $hashed_tmp_pw, PDO::PARAM_STR);
       $stmt->execute();
@@ -74,16 +74,16 @@ if ($_POST) {
 
 <body>
   <main class=" entrance-form-wrapper">
-  <?php if ($err_mesg) { ?>
-    <?php
+    <?php if ($err_mesg) { ?>
+      <?php
       echo '<div class="alert">';
       echo implode('<br>', $err_mesg);
       echo '</div>';
-    ?>
-  <?php } ?>
+      ?>
+    <?php } ?>
 
-  <?php if ($complete) { ?>
-    <?php
+    <?php if ($complete) { ?>
+      <?php
       echo '<div class="report_mesg">';
       echo implode('<br>', $report_mesg);
       echo '<a href="./logout.php">
@@ -91,25 +91,26 @@ if ($_POST) {
               ログアウトへ
             </a>';
       echo '</div>';
-    ?>
-  <?php } else { ?>
-    <h1>REISSUE OF PASSWORD</h1>
-    <h3>Eメールアドレス宛に<br>新しいパスワードを送信します。</h3>
-    <form action="./forget_pw.php" method="POST">
-      <div class="form-item">
-        <!-- <label for="email"></label> -->
-        <input type="email" name="email" placeholder="Eメールアドレス"></input>
+      ?>
+    <?php } else { ?>
+      <h1>REISSUE OF PASSWORD</h1>
+      <h3>Eメールアドレス宛に<br>新しいパスワードを送信します。</h3>
+      <form action="./forget_pw.php" method="POST">
+        <div class="form-item">
+          <!-- <label for="email"></label> -->
+          <input type="email" name="email" placeholder="Eメールアドレス"></input>
+        </div>
+        <div class="button-panel">
+          <input type="submit" class="button" value="送信"></input>
+        </div>
+      </form>
+      <div class="form-footer">
+        <p><a href="./register.php">メンバー登録へ<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
+        <p><a href="https://barba.rossa.cc/">ホームへ戻る<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
       </div>
-      <div class="button-panel">
-        <input type="submit" class="button" value="送信"></input>
-      </div>
-    </form>
-    <div class="form-footer">
-      <p><a href="./index.php">ホームへ戻る<i class="fa-solid fa-arrow-right-to-bracket"></i></a></p>
-    </div>
-  <?php } ?>
+    <?php } ?>
   </main>
-  
+
   <script src="https://kit.fontawesome.com/678cad97f5.js" crossorigin="anonymous"></script>
 </body>
 
